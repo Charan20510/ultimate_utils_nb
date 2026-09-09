@@ -1,0 +1,2 @@
+1)    Change branch name
+        git branch -m <current_branch_name> <new_branch_name>

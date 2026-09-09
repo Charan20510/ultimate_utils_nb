@@ -1,0 +1,76 @@
+58)    git restore => brings a file/directory back to its last committed state, undoes local uncommitted changes
+        • the problem it solves: if I've messed up 10-15 files with a bad approach, manually undoing each one is basically impossible
+        • git restore filename => reverts just that one file to the last commit's version
+        • git restore foldername => reverts an entire directory back to the last commit
+        • git restore (alone) => reverts EVERY file in the whole repo back to the last committed state
+        • git restore --staged filename (or git restore --staged .) => unstages a file (removes it from staging area) but keeps my actual working directory changes intact
+        • Git restore = mainly for undoing changes BEFORE they're ever committed
+
+59)    git stash => temporarily sets aside my unfinished/uncommitted work so I can switch branches safely
+        • the problem: git won't let me switch branches if I have uncommitted changes — it blocks me with an error to protect my work
+        • instead of committing half-done work (or throwing it away with restore), I stash it
+        • git stash => uncommitted changes disappear from working directory, but they're safely stored in a temporary area (the stash), not lost
+        • once stashed, I can freely switch branches, do other work, then come back later
+
+60)    Bringing stashed work back — pop vs apply
+        • git stash pop => restores the most recent stash AND removes it from the stash list (like cut — it's gone from stash once restored)
+        • git stash apply => restores the stash but KEEPS it in the stash list too, so I can reuse it again later
+        • if I've stashed multiple times, git keeps them all ordered (newest on top), pop/apply always grabs the most recent by default
+
+61)    git stash list => shows all my saved stashes
+        • each one has an identifier like stash@{0}, stash@{1}, etc.
+        • I can target a specific one: git stash pop stash@{0} or git stash apply stash@{0}
+        • git stash drop => manually removes a specific stash from the list (without restoring it)
+        • Key difference recap: pop = restore + remove from list | apply = restore + keep in list
+
+62)    git revert => undoes the changes from a previous commit, WITHOUT deleting that commit
+        • instead of erasing history, it creates a brand new commit that cancels out the old one's changes
+        • think of it like accidentally adding too much salt while cooking — I don't throw the dish away, I just add something to balance it out
+        • Git revert = fixing an old mistake without erasing it, keeps history clean and fully traceable
+        • how to use it: copy the commit ID of the bad commit → git revert <commitID> → confirm/edit the commit message (save & exit with :wq) → a new "revert commit" is created
+
+63)    git reset vs git revert — the key difference
+        • git reset => jumps back to an older commit and DISCARDS everything after it, no new commit created, no trace of the removed commits in the log
+        • git revert => creates a NEW commit that reverses an old one, old commit still exists in history, and the revert itself shows up in the log too
+        • revert is safer for shared/remote repos since everyone can see exactly what was undone and why — nothing mysteriously disappears
+
+64)    git rebase => moves my branch's commits onto a new "base," rewriting history into a clean, straight line instead of a merge commit
+        • the situation: I'm working on a feature branch, meanwhile main gets new updates I also want in my branch
+        • Option 1 (merge) => git merge main into feature — works fine, but creates an extra "merge commit" each time, can clutter history
+        • Option 2 (rebase) => git rebase main — cleaner alternative, no extra merge commits, history stays linear
+
+65)    What actually happens during a rebase (behind the scenes)
+        • git finds the last common commit shared between my branch (feature) and the branch I'm rebasing onto (main)
+        • my feature branch's commits (everything after that common point) are temporarily set aside
+        • main's new commits get applied first
+        • then my feature branch's commits are replayed one by one on top of them
+        • end result = same code, but a clean, linear commit history instead of a tangled merge
+
+66)    git rebase — important caution
+        • rebase REWRITES commit history — even the commit IDs change
+        • safe to use on my own personal/private branches, no issue there
+        • risky on shared/public branches — if someone else is working on that same branch, their local copies won't match anymore after I rebase, and they won't be able to pull/sync normally
+        • if I must rebase a shared branch, always inform the team first
+
+67)    Pull Request (PR) => a request to merge my branch's changes into another branch (usually main), for review before merging
+        • I can't directly push changes into someone else's repo/branch — a PR is how I formally ask "please review my changes and merge them if they look good"
+        • this is the standard workflow real teams/companies use for safe collaboration
+
+68)    Creating & merging a Pull Request on GitHub
+        Phase 1 => Go to the repo on GitHub → click the "Pull requests" tab → click "New pull request"
+
+        Phase 2 => Pick the two branches
+        • Base = the branch you want to merge INTO (e.g. main)
+        • Compare = the branch you're bringing changes FROM (e.g. development)
+        • GitHub automatically shows a comparison — files changed, lines added/removed
+
+        Phase 3 => Fill in PR details & submit
+        • give it a title (e.g. "merge development updates into main")
+        • add a description explaining what the PR does
+        • click "Create pull request"
+
+        Phase 4 => Review & merge
+        • the PR page has 3 tabs: Conversation (discuss/comment), Commits (all commits included), Files changed (exact diffs)
+        • once reviewed and everything looks good, click "Merge pull request", then "Confirm merge"
+        • GitHub shows "Pull request successfully merged and closed" — changes are now officially part of main
+        • PR = keeps main branch stable, every change gets reviewed before it lands, safe collaboration for the whole team

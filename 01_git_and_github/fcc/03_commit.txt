@@ -1,0 +1,66 @@
+30)    Commit => saving my staged changes permanently into the local repository
+        • think of it like getting ready for a party — I don't just walk out the door
+        • first I check myself in the mirror (working directory), adjust things (staging area) if something's off
+        • only when everything looks right do I actually leave for the party (commit)
+        • that's why we don't commit directly from working directory — staging gives me a chance to review/fix before it's permanent
+        • Commit = confirming "everything is correct now, save this for good"
+
+31)    git commit -m "message" => the command to actually make a commit
+        • -m lets me attach a short message describing what I changed
+        • example: git commit -m "I have made some changes to the files"
+        • after committing, terminal shows how many files changed, lines added, lines deleted
+        • running git status afterward shows everything clean — all changes saved to local repository
+
+32)    "Please tell me who you are" error => shows up the first time I try to commit on a fresh git install
+        • git needs to know my identity (name + email) before it records any commit
+        • this info gets attached to every commit, helps track who changed what later
+        • completely normal, not a bug
+
+33)    Fixing the identity error — git config
+        • git config --global user.email "myemail" => sets my email
+        • git config --global user.name "myname" => sets my name
+        • --global flag = applies this setting to my whole computer, every repo uses same identity
+        • --local flag = applies only to the current/specific repository instead
+        • setting this up is mandatory the first time I use git, then it's remembered for all future commits
+
+34)    git reset HEAD~ => undoes/rolls back the last commit
+        • brings everything back to the working directory (un-commits it)
+        • checking git status afterward shows all files back in working directory, ready to be staged again
+        • gives me full control — I can always go back and redo things
+
+35)    Deleting files the "manual" way vs git rm
+        • manually deleting a file + then git add . = two separate steps (delete, then stage the deletion)
+        • git rm filename => deletes the file AND stages that deletion in one single command
+        • example: git rm 4.txt — file disappears from my system and shows up as staged/deleted in git status
+
+36)    git reset (normal) vs git reset --hard
+        • normal git reset => only brings back staged CHANGES, not files that were actually deleted
+        • so if a file was deleted, it stays deleted even after a normal reset
+        • git reset --hard => restores everything, both changes AND deleted files, back to previous state
+
+37)    git rm on a file with uncommitted changes => git won't let me delete it directly
+        • error shown: "the following file has local modifications"
+        • git is protecting me — it wants me to either commit those changes first or confirm I really want to discard them
+
+38)    git rm -f filename => force delete
+        • forces the deletion even if the file has uncommitted changes
+        • file gets deleted immediately, no warning this time
+
+39)    git rm --cached filename => removes file from staging only, keeps it physically on my computer
+        • after running it, git status shows the file moved to "untracked" section
+        • it's no longer staged, but the actual file is still sitting in my working directory
+        • Difference: -f (force) = deletes the real file too | --cached = only unstages it, file stays
+
+40)    git rm -r foldername => recursively deletes a folder
+        • -r = recursive, removes the folder plus everything inside it (subfolders, files)
+        • without -r, only the folder itself is targeted, not its contents
+        • running it also auto-stages the deletion, git status shows the folder as "deleted"
+
+41)    git log => shows my full commit history
+        • lists every commit made so far, along with its message
+        • each commit has a long random string = commit ID
+        • commit IDs let me jump back to any previous version later on
+
+42)    git log --oneline => shows commit history in a short, clean, one-line-per-commit format
+        • gives just the essentials — shortened commit ID + message
+        • these shortened IDs work the same way as full ones for going back to previous versions

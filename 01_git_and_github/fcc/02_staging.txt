@@ -1,0 +1,82 @@
+16)    git init => the command that tells git "start tracking this folder as my project"
+        • init means initialize
+        • run it inside the folder you want git to watch (my git-one folder here)
+        • once run, git shows "Initialized empty git repository" — confirms tracking has started
+
+17)    .git folder => a hidden folder git creates automatically inside my project, this is where git stores everything internally
+        • it tracks which files changed, who changed them, and all previous versions
+        • to see it, use ls -la (this command shows hidden files/folders too, normal ls won't show it)
+        • .git folder = the actual core of the project, everything git does happens through this folder
+
+18)    Two ways to create a git repository
+        • Local => using git init inside an existing folder on my computer
+        • Remote => creating the repository directly on GitHub, then bringing it down to my machine
+        • either way, initialization is always required to start working with git
+
+19)    Creating a Remote Repository on GitHub
+        Phase 1 => Go to github.com and log in (create an account first if new)
+
+        Phase 2 => Click the "New" button to create a repository
+        • give it a name (e.g. Git-Journey)
+        • add a description
+        • keep it public so anyone can view it
+        • click "Create repository" — now I have an empty repo on GitHub
+
+        Phase 3 => Add files directly on GitHub
+        • click "Create a new file", name it, write content inside
+        • click "Commit changes" to save it
+        • Commit = just means save, nothing complicated (we'll go deeper into commits later)
+
+20)    Cloning => bringing a remote repository (from GitHub) down onto my local machine
+        Phase 1 => Move to the location where I want the repo (e.g. cd ../ to go back to Desktop)
+
+        Phase 2 => Get the repo's link
+        • on GitHub, open the repo, click "Code" button, copy the HTTPS link
+
+        Phase 3 => Run git clone followed by that link
+        • git pulls the whole remote repository down into my local machine
+        • after cloning, a new folder appears (named after the repo) containing all its files
+        • run ls -a inside it — the hidden .git folder is there too, proving it's a real, complete git repository
+
+21)    git status => checks what's changed in my working directory right now
+        • shows "modified <filename>" for any file I've edited
+        • I can run it anytime to see the current state of my project
+        • in real projects with many files, it gives a clear summary — what's new, what's modified, what's deleted
+        • git is basically always watching my project in the background, git status is just how I check in
+
+22)    Staging Area (recap) / git add => the command that moves changes from my working directory into the staging area
+        • "adding" a change = telling git "I want to keep this, get it ready for the next commit"
+        • Tracked files = git already knows about them (e.g. files that came from a clone)
+        • Untracked files = brand new files/folders git hasn't seen before, until I add them
+
+23)    git add --all or git add -A => stages every single change across the entire project, no matter which folder I'm in
+        • both commands do exactly the same thing
+        • after running, git status shows everything staged and ready to commit
+
+24)    git reset => undoes staging, moves everything back to the working directory
+        • shows message "Unstaged changes after reset"
+        • useful for testing — I used this to reset between trying different git add variations
+
+25)    git add . => stages changes only inside my current directory (and any subfolders inside it)
+        • if I'm inside a subfolder when I run it, only that subfolder's changes get staged
+        • changes sitting in the root folder stay untouched/unstaged
+        • . means "this current directory and everything inside it"
+
+26)    git add --all / -A vs git add . — the key difference
+        • --all or -A => stages changes across the WHOLE project, regardless of where I am
+        • . => only stages changes from my current directory downward
+        • which folder my terminal is sitting in matters a lot when using .
+
+27)    git add * => stages new or modified files, but skips deleted files
+        • if I deleted a file, * will NOT stage that deletion
+        • only picks up changes sitting in the root folder — ignores files inside subfolders too
+        • * = "all visible changes except deletions"
+
+28)    Staging specific files or file types
+        • Single file => git add filename (e.g. git add 1.txt)
+        • File inside a folder => git add foldername/filename (e.g. git add myfolder/3.txt)
+        • By extension => git add *.txt — stages all .txt files in current dir, still skips deleted files and subfolder files
+
+29)    Best practice for staging everything => go to the root folder of my project and run git add .
+        • simplest and safest way to stage all my changes at once from the project's root
+        • after this, git status confirms everything has moved from working directory → staging area

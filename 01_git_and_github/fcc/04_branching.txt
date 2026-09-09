@@ -1,0 +1,100 @@
+43)    Branching => a separate line of development where I can work independently without touching the main code
+        • right now my repo has only one branch
+        • the default branch is called main (used to be called master, same idea, just renamed)
+        • main = my project's central line of development, this is where everything starts
+
+44)    Branching explained (restaurant analogy)
+        • main branch = the main kitchen, where dishes are actually prepared and served to customers
+        • if I want to try a new recipe, I don't experiment directly in the main kitchen — one mistake could ruin everything
+        • instead I set up a separate test kitchen (a new branch) to safely try the new dish
+        • once the recipe is perfected, I bring it back into the main kitchen (merge it into main)
+        • Branch = a safe, isolated space to build and test changes before they touch the real project
+
+45)    git branch => lists all branches in my project
+        • shows every branch I have, with a star (*) next to whichever one I'm currently on
+        • git branch branchname => creates a new branch (e.g. git branch development)
+        • a new branch always inherits the exact current state of whatever branch I was on when I created it
+
+46)    git checkout branchname => switches me over to a different branch
+        • example: git checkout development moves me into the development branch
+        • once inside, git status shows clean because development starts as an exact copy of main
+
+47)    How branch isolation works
+        • any file I create/change and then commit belongs only to the branch I was on when I committed it
+        • example: create 3.txt on development branch, stage + commit it → it only exists there
+        • switch back to main (git checkout main) → 3.txt disappears from my file system, because it was never committed on main
+        • git automatically adjusts which files are visible depending on which branch I'm on — no duplication, no conflict, all managed by git itself
+        • for a change to "count" on a branch, it must be committed on that specific branch
+
+48)    Merge => combining changes from two branches into one
+        • I can create many branches (staging, development, frontend, backend...) and work on each separately
+        • once changes are tested and finalized, they get merged back into main
+        • Merge = bringing two branches' work together into a single branch
+
+49)    Merging branches — basic workflow
+        Phase 1 => Switch to the branch that should receive updates (e.g. git checkout development)
+
+        Phase 2 => Run git merge branchname -m "message" (e.g. git merge main -m "merging main into development")
+        • pulls all the other branch's changes into the branch I'm currently on
+
+        Phase 3 => Repeat in the other direction if needed
+        • switch to main (git checkout main), then git merge development -m "..."
+        • now both branches contain each other's changes and are fully in sync
+
+50)    Merge Conflict => happens when the same part of the same file was changed differently in two branches
+        • git can't automatically decide which version is correct, so it flags the file as conflicted
+        • I have to resolve it manually — decide what to keep, or combine both versions myself
+
+51)    Resolving a Merge Conflict — full workflow
+        Phase 1 => Create the conflict (for practice)
+        • on one branch (e.g. staging), edit a file and commit
+        • switch to another branch (e.g. development), edit the SAME line of the SAME file differently, and commit
+
+        Phase 2 => Try to merge => git merge staging (while on development)
+        • git fails with "Automatic merge failed. Fix conflicts and then commit the result"
+
+        Phase 3 => Open the conflicting file
+        • git marks the conflicting sections clearly, showing both versions (staging's vs development's)
+        • manually decide — keep one, remove one, or combine both, then delete git's conflict markers, save the file
+
+        Phase 4 => Stage and commit the resolution
+        • git add ., then git commit -m "merge conflict solved"
+        • conflict is now resolved on that branch
+
+        Phase 5 => Sync the rest
+        • switch to the other branch, merge in the now-resolved branch — since both sides now match, it merges cleanly
+        • repeat for main branch too, so everything flows through and stays in sync
+
+52)    git checkout <commit ID> => jumps my project back to the exact state of an older commit (not just a branch)
+        • get the commit ID from git log --oneline
+        • all current changes must already be committed — git won't let me check out to a previous version if there are uncommitted/untracked changes
+        • terminal shows "HEAD detached at <commit ID>" — confirms I'm viewing an old snapshot
+        • files reflect exactly how they were at that commit (anything added after that point is gone from view)
+        • to come back to the latest version, just git checkout main again
+
+53)    git diff <newerCommitID> <olderCommitID> => compares two commits, shows exactly what changed between them
+        • shows removed lines in red, added lines in green
+        • put the NEWER commit ID first, OLDER commit ID second => shows what's new/removed compared to the older one
+        • reversing the order flips the perspective (shows it from the older commit's point of view instead)
+        • press Q to exit the log/diff view in the terminal when stuck inside it
+
+54)    Push, Fetch, Pull => the three main ways local and remote repositories stay in sync
+        • Push => sending my local commits up to the remote repository
+        • Fetch => downloading remote changes into my local repository's memory, but NOT applying them to my working directory yet
+        • Pull => fetch + merge together in one go — remote changes are downloaded AND immediately applied to my working directory
+        • Pull = Fetch + Merge
+
+55)    git push origin branchname => uploads my local branch's commits to the remote repo
+        • origin = the remote repository, branchname = which branch to push
+        • example: git push origin main sends main's commits to GitHub's main
+        • only pushes the branch I specify — other local branches stay unpushed until I push them individually too
+        • pushing a branch that doesn't exist yet on remote (e.g. git push origin staging) automatically creates it there
+
+56)    git fetch => downloads new changes from the remote into my local repo, without touching my working directory yet
+        • useful when someone (or I, via GitHub directly) made changes on the remote that my local doesn't have
+        • after fetching, I still need to run git merge to actually see those changes in my files
+
+57)    git pull => fetch + merge combined into a single command
+        • grabs all new remote changes AND immediately merges them into my local working directory
+        • no separate merge step needed — everything updates in one go
+        • push, fetch, and pull are the three most frequently used git commands for daily development work

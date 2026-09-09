@@ -1,2 +1,8 @@
-1)    Change branch name
+1)      ====    Change branch name    ====
         git branch -m <current_branch_name> <new_branch_name>
+
+2)      ====    Delete Branch    ====
+        git branch -d Git_and_GitHub     # safe (merged only)
+        git branch -D Git_and_GitHub     # force
+
+        Can't delete the branch you're on — switch first (git switch main)

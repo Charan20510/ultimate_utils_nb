@@ -1,0 +1,6 @@
+1)    Primary Key = attribute that uniquely defines the row in DB
+        • Always unique for each row in the table
+        • Used to differentiate b/w two rows even though all other attributes are exact same
+
+2)    Surrogate Key
+        • Key that has no mapping to anything to real world

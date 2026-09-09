@@ -1,0 +1,58 @@
+1)    What is a Database (DB)?
+        Any collection of related information (or) collection of information that store related stuff
+        • Phone Book
+        • Shopping list
+
+2)    Database Management Systems (DBMS)
+        Software program that helps users create and maintain a database
+        • Makes it easy to manage large amounts of information
+        • Handles Security
+        • Backups
+        • Importing/exporting data
+        • Concurrency
+        • Interacts with software applications
+
+3)    DBMS isn't the actual Database - It is the software application that is creating, maintaining,
+        updating, deleting information for the actual database
+
+4)    4 core operations of DBMS
+        • C - Create
+        • R - Read / Retrive
+        • U - Update
+        • D - Delete
+
+5)    Relational Database Management Systems (RDBMS)
+        Help users create and maintain a relational database
+        • mySQL, Oracle, postgreSQL, mariaDB, etc.
+
+6)    Structured Query Language (SQL)
+        • Standardized language for interacting with RDBMS
+        • Used to to perform C.R.U.D operations, as well as other administrative tasks
+          (user management,   security, backup, etc).
+        • Used to define tables and structures
+        • SQL code used on one RDBMS is not always portable to another without modification.
+
+7)    Non-Relational Database Management Systems (NRDBMS)
+        Help users create and maintain a non-relational database mongoDB, dynamoDB,
+        apache cassandra, firebase, etc
+
+8)     Implementation Specific
+        • Any non-relational database falls under this category, so there's no set language standard.
+        • Most NRDBMS will implement their own language for performing C.R.U.D and administrative
+        operations on the database.
+
+9)    Database Queries
+        Queries are requests made to the DBMS for specific information
+        • If there is complex DB layout or schema then getting a specific peice of info is hard / tricky
+        • To solve this we write DB Queries - its like a programming language
+        • Query <=> DBMS <=> DB
+        • Queries should be in SQL
+
+10)    Wrap Up
+        • Database is any collection of related information
+        • Computer are great for storing databases
+        • Database Management Systems (DBMS) make it easy to create, maintain and secure a database.
+        • DBMS allow you to perform the C.R.U.D operations and other administrative tasks
+        • Two types of Databases, Relational & Non-Relational
+        • Relational databases use SQL and store data in tables with rows and columns
+        • Non-Relational data store data using other data structures

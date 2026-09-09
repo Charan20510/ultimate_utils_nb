@@ -1,0 +1,78 @@
+1)    Git => Git is a powerful tool that constantly keeps track of every change you make to your files
+        Git keeps track of
+        • What Changed
+        • When it Changed
+        • Who Changed it
+        • Where it happened
+
+2)    Any kind of file type is tracked
+        • which line was edited
+        • when it was done
+        • by whome too
+
+3)    Version Control System
+        • Git saves different versions of files
+        • Git keeps multiple versions of the same file effortlessly
+        • When ever we want, we can roll back to any previous version in a moment
+
+4)    Git is used to keep track of changes & maintain different versions of any file
+
+5)    GitHub acts as that central online server where your teams entire project lives, making it easy for everyone to see, edit and share updates in one single place without confusion.
+
+6)    Git Internal Structure or architecture
+        • Local => my computer, where i do my work. This is where my files, work, changes are stored
+        • Remote => cloud, where i push or upload my local work
+
+7)    GITs WORKFLOW => Local Part
+        Phase 1 => Working Directory
+        • Folder where i am working on my project
+        • where these all happen - write code, create new files, modify them, etc
+
+        When this version is good, then
+        
+        Phase 2 => Stage
+        • Meaning = Confirming the version is good for later or next Phase
+        
+        Phase 3 => Local Repository
+        • Saving the version in local repository (Commit)
+        • Committing means permanently saving those changes to your local repository
+          locking them in as a recorded version of my project
+          
+        Repository = repository is a place where all the versions of my files and their complete
+                     change history are stored
+
+8)    Staging Area => the middle ground, a temporary space where files sit between the Working Directory and the final save in the Repository
+        • once i finish work in Working Directory, staging means saying "my changes are ready, they can move to the next step"
+
+9)    Repository (expanded) => a place where all versions of my files & their complete change history are stored
+        • Local Repository = a specific folder on my own computer
+        • Remote Repository = lives on a cloud server like GitHub
+        • think of it like a digital cabinet for my code — a secure place where Git stores every record of my work
+
+10)   Inside every repository, Git automatically creates a few system files
+        • these track my changes, history, commits, everything
+        • fully managed by Git itself — the whole system runs on the data stored in these files
+
+11)   Recap of Local Workflow (Phases 1-3)
+        Phase 1 => Working Directory - write code, create/modify files
+        Phase 2 => Stage - confirm changes are ready
+        Phase 3 => Commit to Local Repository - permanently saved
+        • up to this point, everything happens only on my own computer
+        • nothing has gone to the cloud yet
+
+12)   When do i actually need the cloud?
+        • to share my code with others
+        • to access it from another computer
+        • to keep it safely backed up
+
+13)   Push => uploading/sending my Local Repository to the Remote Repository (GitHub)
+        • same idea as Google Drive/OneDrive - i could keep files only on my device, but cloud storage lets me access from anywhere
+        • even if something gets deleted locally, it stays safe online
+        • GitHub = my cloud backup for code
+
+14)   Pull => bringing that same code back down from the Remote Repository to any other machine
+
+15)   Main Purpose of Git & GitHub => to make collaboration and remote access possible
+        • Push = send code from Local Repo → Cloud
+        • Pull = bring code back from Cloud → any machine
+        • this simple concept is the foundation the entire Git system rests on

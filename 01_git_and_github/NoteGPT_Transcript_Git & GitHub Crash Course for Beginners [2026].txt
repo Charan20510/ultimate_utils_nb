@@ -1,0 +1,467 @@
+00:00:00 - 00:01:06
+This comprehensive course will give you a rock-solid foundation in Git for version control and GitHub for collaborative remote storage. You will learn the core concepts like how Git tracks your work through the working directory, staging area, and repository. You'll learn the vital Git commands from add and commit to stash and rebase through clear real-world examples. And you'll learn about collaborative workflows like how to work with branches, handle merges, and use powerful features like pull requests on
+
+00:00:33 - 00:01:31
+GitHub. Sumit Saha developed this course. >> Today, we are diving into something really exciting, Git and GitHub. But before you go any further, let's clear one thing up. Git and GitHub are not the same thing. They're connected, yes, but completely different. Think of it this way. Git is the coffee and GitHub is the coffee shop where that coffee is served. Fun analogy, right? Don't worry. In just a moment, you will see exactly what I mean. So, let's start by understanding what
+
+00:01:06 - 00:02:09
+Git actually is and how it works. Simply put, Git is a powerful tool that constantly keep track of every change you make to your files, and I mean literally all the time, day or night, 365 days a year. Git records what changed, when it changed, who changed it, and even where it happened. Now, what kind of files are we talking about? Almost any kind, not just code. It could be an image, a text file, JavaScript, PHP, Python, or even a video. No matter what you are working on, Git tracks every single change. Which line was
+
+00:01:37 - 00:02:32
+edited, when it was done, and by whom. Pretty amazing, isn't it? But here's the best part. The magic of Git doesn't stop there. The coolest thing about Git is that it saves different versions of your files. Imagine you wrote some code and then made a few changes to it after a few days. Now, you want to make sure the old version doesn't get lost. That's exactly where Git comes to the rescue. It lets you keep multiple versions of the same file effortlessly, and whenever you want, you can roll back to any
+
+00:02:05 - 00:03:06
+previous version in just a moment. Git is most commonly used in coding projects, but its power goes far beyond just code. You can use Git to keep track of changes and maintain different versions of almost any file. This means you never have to worry about losing a file or accidentally overwriting something important. Let's look at a real-life example. Suppose you are working on a project. You have spent hours writing code. Your client loves it, and everything's going great. Then, a month later, the client asks for some
+
+00:02:35 - 00:03:33
+new changes. You make the updates as requested, but after a few days, the client comes back and says, "Actually, the old version was better." Now, you are in trouble, right? Because you have already overwritten the original code. How do you get it back? That's exactly the kind of problem Git solves. This is why Git is known as a version control system. It keeps every version of your files or code safely stored, so you can go back to any previous state whenever you need to without losing a thing.
+
+00:03:04 - 00:04:03
+Git was created by Linus Torvalds, the same brilliant mind behind Linux. And honestly, what he built is nothing short of genius. Most tools we programmers use have a short lifespan, but Git is one of those rare ones that once you learn it, stays useful for the rest of your career. The best part, Git isn't hard to learn at all. It's built around a few simple commands and concepts. Once you understand those, the whole system starts to make perfect sense. Still, for beginners, Git can feel a little
+
+00:03:34 - 00:04:30
+confusing at first, and that's exactly why I made this video. Think of it not just a tutorial, but as a complete learning resource for mastering Git. Here, we will cover all the essential topics you will actually use in real-world projects. And if you want to jump to a specific topic, you can easily find it from the video timeline. So, if you follow this video closely, I'm sure you'll easily understand every part of Git step by step. Now, let's move on to another important topic, the difference
+
+00:04:02 - 00:04:58
+between Git and GitHub. Git is a tool that runs locally on your own computer. It tracks all the changes you make to your files and keeps everything organized. But, imagine this, you and your teammate are working on the same project. You are coding on your own computer and your teammate is working from another one. That means you both have different versions of the same project, right? And if your team has more members, there will be even more versions, each saved separately on their own machines. That's exactly where
+
+00:04:30 - 00:05:31
+GitHub comes in. When the project is complete, you will need to combine everyone's work into one single place to merge all those changes together. For that, you need a central hub where everyone can upload their updates. You push your work there, your teammate pushes theirs, and GitHub brings it all together. GitHub acts as that central online server where your team's entire project lives, making it easy for everyone to see, edit, and share updates in one single place without any confusion. But, GitHub isn't the only
+
+00:05:01 - 00:05:58
+place where you can host your Git repositories. There are other popular platforms, too, like GitLab and Bitbucket. These are also widely used and trusted by developers around the world. Still, among all of them, GitHub remains the most popular and widely adopted platform. In today's discussion, we'll focus mainly on GitHub. It's now owned by Microsoft and is maintained with great care and attention. Especially in the programming community and in the world of open-source projects, GitHub's contribution is truly
+
+00:05:29 - 00:06:31
+remarkable. So, without wasting any more time, let's dive in and explore how Git and GitHub actually work and see some real-world use cases that will help you understand their power in action. Before you start working with GitHub, the most important thing is to understand its core concept, how it actually works, and what its internal structure or architecture looks like. Git is mainly divided into two major parts, local and remote. The local part refers to your own computer, where you do all your work. This is where your
+
+00:06:00 - 00:06:58
+files, code, and every change you make are stored. The remote part, on the other hand, lives in the cloud. It's where you push or upload your local work. In most cases, when we say remote, we are usually referring to GitHub. Now, let's start with how the local part works. In your computer, the folder where you are working on your project is called the working directory. This is where all the action happens. You write code, create new files, modify existing ones, and make changes as needed. And
+
+00:06:29 - 00:07:29
+when you feel, "All right, this version looks good. I want to save this change." that's when you move on to the next stage in Git's workflow. So, what do you do next? We move our work to the stage. At first, this word might sound a bit unfamiliar, but once you use it a few times, it will make perfect sense. In simple terms, when you finish your work in the working directory, staging means you are saying, "All right, my changes are ready. They can move to the next step." This staging process is the
+
+00:06:59 - 00:07:58
+second phase in Git's workflow. Then comes the third phase, where we take the staged files and send them to the local repository. You can think of the staging area as a middle ground, a temporary space where files sit between your working directory and the final save in the repository. Once you have reviewed everything and you are confident the work is correct, you commit it. Committing means permanently saving those changes to your local repository, locking them in as a recorded version of your project's
+
+00:07:28 - 00:08:27
+history. Now, you might be wondering, "What exactly is a repository?" Simply put, a repository is a place where all the versions of your files and their complete change history are stored. In the case of a local repository, it's a specific folder on your own computer. For a remote repository, it lives on a cloud server like GitHub. You can think of a repository as a digital cabinet for your code, a secure place where Git neatly stores every record of your work and every change you have ever made.
+
+00:07:58 - 00:09:00
+Inside this repository, Git automatically creates a few system files that track everything. Your changes, history, commits, and more. These files are managed entirely by Git itself and the whole system runs based on the data stored within them. So, if we summarize everything we have learned so far, it goes like this. First, we work inside our local working directory. Once we are done, we stage our changes and then commit those staged files to the local repository. Up to this point, everything happens only on our own computer.
+
+00:08:28 - 00:09:27
+Nothing has been sent to the cloud yet. We need the cloud only when we want to share our code with others, access it from another computer, or keep it safely backed up. That's when we push our local repository to the remote repository. In other words, we upload it to GitHub. Think about it like this. Just as we use Google Drive or OneDrive to store files, photos, or documents, we could technically keep everything only on our own device, but we store them in the cloud so that we can access them from
+
+00:08:58 - 00:09:56
+anywhere. And even if something gets deleted locally, it stays safe online. GitHub works the same way. It's our cloud backup for code. So, you see, the main purpose of this whole process is to make collaboration and remote access possible. Having a remote means we can easily send our code from the local repository to a cloud server. And if needed, pull that same code back to any other machine. And that's the core idea of Git. The foundation of the entire system rests on this simple concept.
+
+00:09:27 - 00:10:22
+Beyond that, there's nothing overly complex. Once you clearly understand this basic workflow, everything else in Git will feel much easier to grasp. All right. Now, let's see how to get started with Git from scratch. The very first step before working with Git is installing it on your computer. To do that, just open Google and search for Git. Click on the official Git website that appears in the search results. Then, go to the download section. There you will find different versions for
+
+00:09:54 - 00:10:48
+three major operating systems: Windows, macOS, and Linux. Simply choose the one that matches your system and you'll get clear download instructions right there. Since Git is already installed on my machine, I won't reinstall it. But, if you are working on Windows, click on the Windows option and you will see two download choices: one for 32-bit and another for 64-bit systems. Just pick the one that matches your setup, download it, and run the installer. For Mac users, when you select the macOS
+
+00:10:22 - 00:11:12
+option, you'll also find instructions on how to install Git using Homebrew. Just follow those steps and your installation will be done in no time. And for those using Linux or other Unix-based systems, you can follow the installation guide provided on the site according to your distribution. The entire process is really simple and straightforward. Once the installation is complete, the next step is to open your terminal or command prompt. If you are using a Mac, simply open the terminal app. For Windows
+
+00:10:47 - 00:11:45
+users, you can use either command prompt or PowerShell. Both will work just fine. However, after installing Git, you will usually get a separate terminal called Git Bash. You can use that, too, if you prefer. Many developers actually like working in Git Bash because it feels very similar to a Linux terminal and makes running Git commands a lot easier and more intuitive. All right. I'm opening my terminal now. The first thing we need to do is make sure Git is properly installed. To check that, we will type a simple command in
+
+00:11:16 - 00:12:07
+the terminal: git {hyphen} {hyphen} version. Then, just press enter. As soon as you do that, you will see an output on the terminal showing the version of Git installed on your machine. Keep in mind, the version number might not be the same for everyone. It depends on when you installed Git and which update you are using. If Git is installed correctly, you will see something like this version output. But, if it isn't installed, you will get an error message instead. Hopefully, Git is now properly set up on
+
+00:11:41 - 00:12:40
+your machine, too, and you are ready to start using it. Now, it's time to get our hands dirty to do some practical work. As I mentioned earlier, Git can be implemented in any file or folder, right? So, first, we need to create few files and folders to work with. Let's start by navigating to the desktop using the terminal. I will type CD desktop and then press enter. Here, CD is a terminal command that stands for change directory. It simply means we are moving from one folder to another. Hopefully,
+
+00:12:11 - 00:13:13
+you are already familiar with some basic terminal commands like CD, PWD, touch, and MKDIR. If not, no worries. You can easily learn them using Google or even ChatGPT. They are really simple to understand. Just remember, for Windows users, some of these commands might be slightly different. And keep in mind, commands like CD, PWD, touch, and MKDIR are general terminal commands, not Git commands. All right, now that we are inside the desktop directory, let's create a new folder where we'll keep all
+
+00:12:41 - 00:13:54
+our project files. We'll name it Git-1. So, we will type in the terminal MKDIR, that means creating a directory, Git-1. And press enter. That's it. A new folder named Git-1 has been created inside the desktop directory. Now, we will move into that folder by typing CD Git-1 and pressing enter again. Perfect. We are now inside the Git-1 folder, and this is where our Git project officially begins. So, now that we are inside the Git-1 folder, we will create two files. For that, type the following commands in the terminal.
+
+00:13:17 - 00:14:25
+touch 1.txt and touch 2.txt. Next, we'll create another folder named my folder. To do that, type MKDIR my folder. Then, use cd my folder to enter the folder. Inside this folder, we'll create another file by typing touch 3.txt. Now, let's check everything we have created in our file system. I will open the git one folder in finder on my Mac by typing this command in the terminal. open. dot Here, the dot means the current folder. As soon as I press enter, finder opens up. Inside the git one folder, I can see
+
+00:13:51 - 00:15:03
+two files, 1.txt and 2.txt, and a folder named my folder, which contains the 3.txt file. Now, I'm going to write something inside each of the files. I opened 1.txt in a text editor, wrote one, and saved it. Then I opened 2.txt, wrote two, and saved that as well. Finally, I went inside the my folder directory, opened 3.txt, wrote three, and saved it. So now, all three of my files contain some content. This git one folder is actually my working directory. As I mentioned earlier, this is the folder where I'm doing all my work, and
+
+00:14:28 - 00:15:27
+where all my files are stored. Now, if I want git to start monitoring everything inside this git one folder, I have to tell git, "This is my project folder. Track all the changes here." For that, I'll go back to the terminal, make sure I'm inside the git one folder, and type git init. The word init means initialize. In other words, we are telling git to start working inside this folder from now on. Once I run the command, it shows a message, "Initialized empty git repository." That
+
+00:14:58 - 00:16:10
+means git has now started tracking this folder. How do you know that? Let me show you. Since I'm already inside the git one folder, if I type ls in the terminal and press enter, I can see all the files and folders inside it. But if I type ls {hyphen} la Notice that now we can also see a hidden directory named {dot} git. The ls {hyphen} la command lets us view hidden files and folders in the system. So, we can see a hidden folder named .git inside our project directory. But, who created it? The answer is Git itself.
+
+00:15:33 - 00:16:35
+This .git folder is actually the core of the entire project. It's where Git keeps all its internal data, such as which files have changed, who made the changes, and what the previous versions were. In short, everything Git does is stored right here. From now on, Git will be able to track every change I make in my work. Let's say I made some changes to the three files I created earlier. That means I now have a local repository. But, we can also create a remote repository directly. I mentioned this earlier, so
+
+00:16:04 - 00:17:08
+let's see how to do it. First, I will open my browser again. Then, I'll go to the URL github.com. If you're new, you will need to create an account on GitHub first. Since I already have an account, and I'm logged in, you can see my profile here. On the left side, you can see my repositories, feeds, and other details. Our goal is to store our local files on GitHub. For that, we need to create a new repository. To do that, I will check the blue new icon. Just like we used Git init to create a local repository, here
+
+00:16:36 - 00:17:44
+we can initialize one in the cloud. I will give it a name, Git-Journey. And in the description, I'll write we are learning it and GitHub. I'll keep it public, so everyone can view it. Then, I will click the create repository button. And that's it. A new repository has been created on GitHub. Congratulations. Right now, the repository is completely empty. It doesn't have any files inside it. I want to add some files here, so I will create one. I click on the create a new file button, name it 1.txt,
+
+00:17:10 - 00:18:18
+and inside the file, I write one. Then, I click on the commit changes button. Now, the term commit basically means save. Committing is just like saving a file, nothing complicated. Don't worry about this. We will explore commits in detail later. For now, there's already a default commit message saying, so I will keep that as it is and click commit changes. Next, I create another file the same way, this time naming it 2.txt, writing two inside it, and saving it as well. Now, if I check my GitHub repository, I
+
+00:17:44 - 00:18:49
+can see two files there, 1.txt and 2.txt. At this point, I have two repositories, one on the cloud, meaning on GitHub, and another one locally on my computer. I initialized the local one myself earlier, but now I want to bring the GitHub repository down to my machine by cloning it. So, what should I do? I will go back to my terminal. Right now, I'm inside the git-one folder, but I want to clone the remote repository onto my desktop. So, in the terminal, I will type cd dot dot slash. This command
+
+00:18:17 - 00:19:25
+takes me back to the desktop, just one level back. Now, I'm going to clone the remote repository, the one I just created on GitHub. For that, I need a link, which is basically the repository's URL. So, I will go back to GitHub, open that repository, and click on the code button. There, I can see an HTTPS link. I will copy that link. Then, in the terminal, I typed git clone followed by the link I just copied and pressed enter. Now, notice git is pulling my GitHub repository down into my local machine.
+
+00:18:51 - 00:19:55
+After a few moments, the cloning process is complete. Let's verify whether the repository has been successfully cloned. In the terminal, I will type ls. This command shows the list of folders in my current location. As you can see, there's now a new folder named git-journey alongside my previous git-one folder. Now, we will enter the Git Journey folder. To do that, I will type CD Git Journey. We have now entered the Git Journey directory. If I type LS, I can see the contents of the folder, and
+
+00:19:23 - 00:20:26
+inside it, there are two files, one.txt and two.txt. And if you want to see the hidden files, we'll simply type in the terminal LS hyphen A. Even here, you will find that dot Git folder that proves this is also a complete Git repository cloned from the cloud. Earlier, we saw the same thing in our local repository, right? So, this is how we can create a Git repository in two ways. One by initializing it locally, and the other by cloning it from GitHub or any other remote server. No matter which way we create it, to
+
+00:19:55 - 00:21:00
+start working with Git, initialization is always required. Now, let's look at something new. Suppose I'm currently inside the Git Journey folder. This is the repository I just cloned from the remote. Now, if I make any changes to this repository, for example, I open the file one.txt in a text editor. Inside it, I keep everything as it was, but add the number one at the end and save the file. Now, I want to know what exactly changed, or whether Git has detected the modification. To check that, I will type
+
+00:20:27 - 00:21:32
+in the terminal Git status. And as soon as I run this command, Git immediately tells me modified one.txt. That means Git has already detected the change I made in that file. Now, let's say I make a small change in two.txt as well, just adding a two at the end. Then, I run Git status again. This time, it shows modified two.txt. That means both files have been changed, and Git has detected both modifications. This is exactly how Git continuously keeps an eye on every change we make. It's like
+
+00:21:00 - 00:21:56
+it's always watching over our project. At any point, we can simply run the Git status command to see which files have been modified or updated. In a real project, we usually work with multiple files at the same time, right? In that case, Git status give us a clear summary of the overall situation. What has changed, which files are new, and which ones are modified. So, up to this point, we have learned that Git can be initialized in two ways, either locally or from a remote repository. And with
+
+00:21:28 - 00:22:30
+Git status, we can easily check what changes have been made in our working directory. Hopefully, everything is clear up to this point. So far, we have only worked the working directory. That means we have created and modified files, but we haven't yet told Git to keep those changes. Now, we are going to move them into the staging area. In Git terminology, the process of moving changes from the working directory to the staging area is called adding. Simply put, Git add means telling Git, "I want to keep this change." So, let's
+
+00:21:59 - 00:23:09
+see how Git add actually works. Right now, inside our Git Journey folder, we have two files, and both have been modified. Now, I'll create another folder inside Git Journey, named my folder. To do that, I will type in the terminal, mk dir my folder. Then I will use cd to enter that folder. Inside my folder, I'll create a new file called 3.txt by typing touch 3.txt. As soon as I run this command, a new file named 3.txt is created. Then I open the 3.txt file in my text editor. Inside it, I write three and save the file.
+
+00:22:34 - 00:23:31
+Now, we have made quite a few changes, haven't we? Let's see what we did. We created a new folder, added a new file, and modified some existing ones. In other words, our entire project has gone through multiple changes. So now, it's time to move all these changes into the staging area. To do that, I'll first go back to the repository's root folder, meaning I'll move one step up. cd dot dot. Now, I am back in the root directory, which is the Git Journey folder. From here, I'll run the Git add
+
+00:23:03 - 00:24:08
+command. But before adding, let's first check which files have actually been changed. So, I will type Git status. And look, Git is showing that two text files have been modified and a new folder has been created. It is also saying that the old files are tracked, while the new folder is untracked. Why is that? Because the old files came from the remote repository we cloned earlier. So, Git already knows about them. But since my folder is newly created, Git doesn't recognize it yet. If I want to move everything to the
+
+00:23:35 - 00:24:51
+staging area at once, I have two options. I can either use the command Git add {dash} {dash} all, or the shorter version Git add {hyphen} A. Both commands do exactly the same thing. So, let's first try with Git add {dash} {dash} all. In the terminal, I type Git add {dash} {dash} all. After running this command, I will check the status again by typing Git status. Now, we will see that Git has a staged everything. In other words, all the changes we made are now ready to commit. We'll talk about commits in detail a bit
+
+00:24:13 - 00:25:17
+later. For now, just remember that when you use Git add {dash} {dash} all, Git takes every change and prepares it for the next commit. Now, suppose I want to go back to the previous state, that is, remove everything from the staging area and return them to the working directory. To do that, I will type in the terminal Git reset. As soon as I run this command, everything goes back to the way it was before. You can see in the terminal it says, "Unstaged changes after reset." Now, if I check the status again by
+
+00:24:45 - 00:25:50
+typing Git status, you will notice that everything is back to the earlier state. Just like before, all right. Now, let's take a look at how Git add {hyphen} A works. Just like before, I will type in the terminal, git add {hyphen} capital letter A. After running this command, I will check the status again by typing git status. And you will see that git has a staged everything just like before. That means all the changes we made are now ready to commit. So, whether we use git add {dash} {dash} all or git add {dash} A,
+
+00:25:18 - 00:26:19
+both do the same thing. Git stages every change. You can use either one, it doesn't make a difference. Now, I will run git reset again to unstage everything and bring all changes back to the working directory. Then I will check the status once more using git status. Everything looks good again, back to the unstaged state. Now, in this state, if I type in the terminal, git add {dot}. What happens then? At first glance, it seems like it's doing the same thing as git add {dash} {dash} all. Everything
+
+00:25:48 - 00:26:54
+appears to be staged, but actually, that's not the case. Here's where the difference lies. Let's see what that difference really is. I'll run git reset again to return everything to the previous state. Now, all files are back in the working directory. Next, I will go inside the my folder directory by typing cd my folder. Now that I'm inside my folder, I will type git add {dot}. Then, to check the status, I will type git status. And look, git has only staged the 3.txt file that's inside my folder. The other files
+
+00:26:21 - 00:27:21
+in the root folder are still unstaged. This difference is really important. The options {dash} {dash} all or {dash} A mean that git will stage every single change across the entire project. But using the {dot} means git will only stage the changes within the current directory you are in. Also, keep in mind, if there were a sub folder inside my folder, using the {dot} would still include the files inside that sub folder, too. In simple terms, the {dot} means the current directory and everything inside it. So now, we have
+
+00:26:51 - 00:27:54
+seen three variations of the Git add command, {dash} {dash} all, {dash} A, and dot. The first two work exactly the same way, while the dot version is a bit more limited in scope. Now, I will run Git reset to bring everything back to the previous state again. Next, let's look at another important concept. I will go back to the root folder by typing CD {dot} {dot}. Then in the terminal, I will type Git add {dash} {dash} all, so that everything is staged again. Now, we know all our files are ready for commit.
+
+00:27:22 - 00:28:40
+At this point, I make some changes directly in the working directory. For example, I delete the file 2.txt and create a new one named 4.txt, writing four inside it. That means I have deleted one file and added another new one. Now, if I check the status by typing Git status, what do you see? Git shows that under changes to be committed, the previously staged files are still there, but under changes not staged for commit, it now lists 2.txt as deleted and 4.txt as untracked. So, if I now type Git add star and then
+
+00:28:01 - 00:29:06
+check again with Git status, you'll see that Git has staged the newly created 4.txt file, but it hasn't staged the deleted 2.txt file. That's why it's important to understand that Git add star only stages new or modified files, but not deleted ones. The behavior of the asterisk is that it stages all visible changes except for deleted files. In other words, if a file has been deleted, it won't be added to the staging area. That's the key difference between the star and the dot
+
+00:28:33 - 00:29:53
+and the {dash} {dash} all options. This is how the star works in Git add. Now, let's return to the previous state again by typing Git reset. Then check the current situation with Git status. Now, if you want to stage only a specific file, say 1.txt, which has been modified, you can do that by typing git add 1.txt. Similarly, if you want to stage a file inside a folder, for example, the file inside my folder, you can write git add my folder/3.txt. Let's test it. I type git add 2.txt. After running this command, if we check
+
+00:29:13 - 00:30:19
+the status using git status, we'll see that only 2.txt has been changed. So, yes, we can also stage individual files by specifying their names. Now, let's go back again by typing git reset. This returns everything to the previous unstaged state. We can also stage files by their extension. For example, if we want to stage all .txt files, we will write git add star.txt. This command stages all .txt files in the current directory, excluding deleted ones. Note that git only stages the changes it
+
+00:29:46 - 00:30:49
+finds in the root folder. It won't include deleted files or files inside sub folders. Finally, if we want to stage everything at once, the best and simplest practice is to go to the root directory and type git add. After doing that, all the changes are staged together. If we now run git status, we'll see that everything has been staged successfully. That means all our changes have been moved from the working directory to the staging area. So far, we have learned how to move changes from the working directory to
+
+00:30:17 - 00:31:17
+the staging area using the git add command. Now, let's see how we can save those changes from the staging area to the local repository. In git's language, this is called a commit. It means we are confirming and saving our changes permanently. You can think of it like getting ready for a party. You don't just walk straight out the door. First, you stand in front of a mirror and check your clothes, shoes, tie, and hair. Then the stage where you make adjustments. Maybe you realize this shirt doesn't
+
+00:30:47 - 00:31:38
+look good, or let me change these shoes. That's an intermediate step. You haven't left for the party yet. You are just making sure everything is in order. If something's off, you can fix it right there. Once you are satisfied and everything looks perfect, that's when you finally leave for the party. Git works in the same way. Instead of going straight from the working directory to the local repository, we first move our changes to the staging area. This is an intermediate step where we can review,
+
+00:31:13 - 00:32:11
+adjust, or even remove changes before saving them permanently. We don't commit directly from the working directory because the staging area gives us a chance to verify everything before finalizing. When you finally commit, it means you are sure everything is correct. No more mistakes, and now the work can be saved permanently. That's why this process is called a commit. Now, let's see how to make a commit in practice. First, we'll check our current state using Git status. It shows that the staging area
+
+00:31:42 - 00:32:45
+contains some changes. These are ready, but not yet committed. To commit them, we will write Git commit {slash} m {space} and a commit message. The {slash} m flag lets you add a short message describing what you changed. For example, Git commit {slash} m I have made some changes to the files. Now, sometimes an error may appear the first time you try to commit. When you install Git for the first time and attempt a commit, you might see a message like please tell me who you are. Don't worry. This is completely normal. It's just
+
+00:32:14 - 00:33:22
+Git's way of asking for your identity before recording a commit. Git needs to know who is making the changes and from which email address. This information is attached to every commit in the project history, which later helps track who made which changes. Fixing this issue is very simple. Git actually tells us exactly what to do. Just run the following two commands. Git config {dash} {dash} global user.email and pass your email address. Then git config {dash} {dash} global user.name pass your name. By running these two
+
+00:32:48 - 00:33:45
+commands, the problem is solved. The first command sets your email address globally and the second one sets your name globally. The {dash} {dash} global flag means that this configuration will apply to your entire computer. So, every git commit you make from this machine will use the same name and email from now on. If you want to make the configuration specific to a single project, you can use the {dash} {dash} local flag instead of {dash} {dash} global flag. That way, the settings will apply only to that particular
+
+00:33:16 - 00:34:14
+repository. In short, when you use git for the first time, setting up your user configuration is mandatory. It's part of the basic git setup you need to do before committing. Once it's configured, git will automatically recognize your identity for all your future commits. Since I already have git configured, I don't need to set it up again. All right, let's go back to our main task. We are going to make a commit. We already know what to type in the terminal. git commit {minus} m I have
+
+00:33:45 - 00:34:39
+made some changes to the files. Perfect, the commit is done. The terminal now shows how many files were changed, how many lines were added, and how many lines were deleted. Let's verify everything by checking the status. git status As you can see, everything looks clean now, meaning all the changes have been successfully saved in the local repository. From now on, whenever you make new changes to any file, you'll have to stage and commit them again, just like before. One more thing about
+
+00:34:12 - 00:35:16
+commits, you can always roll back to the previous state if needed. To do that, type in the terminal git reset head and a tilde sign. This command will undo the last commit and bring everything back to the working directory. Now, if we type git status, you will see that all the files have returned to the working directory, ready to be staged again. You can now modify or commit them as you wish. See how amazing it is. You have complete control over your work. It's just about remembering the right commands. We will
+
+00:34:44 - 00:35:52
+explore even more useful features soon. Now, let's move on to the use of Git remove. But before that, let's make a new commit, just like the one we did earlier. So, in the terminal, I will type git add {dot}. Then git commit {minus} m I have made some changes to the files. Perfect. Our commit is done. Now, let's manually delete the 1.txt file from our file system and then go back to the terminal. I will type git status. Now, you can see the change. It shows that our 1.txt file has been deleted. After
+
+00:35:18 - 00:36:25
+that, if I type git add {dot}, the deletion will also be staged, right? So, instead of deleting a file manually and then adding it again, you can actually do both steps in a single command. If you want to delete a file and stage that deletion at the same time, just type git rm 4.txt. Here, we are taking 4.txt as an example. This means we want to delete 4.txt and automatically move that change to the staging area. Once we run this command and then check the status with git status, you will notice that 4.txt
+
+00:35:52 - 00:36:57
+has been deleted and at the same time staged. So, we no longer have to perform two separate steps, deleting and adding manually. We can do both at once with this single shortcut. If we check in Finder, we'll see that 4.txt has disappeared. Now, let's look at another example. But before that, we'll roll back the deleted file. To do this, we will use the git reset command. However, when you run a normal git reset, it only brings back the changes, not the deleted files. Once you execute git reset, you
+
+00:36:24 - 00:37:26
+will see in the terminal the message "Unstaged changes after reset." But, if you check your file system, the deleted file hasn't returned. That's because a normal reset only brings back the staged changes, not the actual files. We can confirm this by running git status. You will notice only the changes are back. Manually deleted files are still missing. If you want to restore everything, meaning both the changes and the deleted files, then you will have to run git reset {dash} {dash} hard.
+
+00:36:55 - 00:38:01
+Once you execute this, both your changes and the deleted files return to their previous state. Now, let's explore the use of git remove a bit deeper. Suppose you want to remove a file. Now, let's say we edit the 4.txt file and write four inside it. That means there's now a change in the working directory. If I try to delete it directly using git rm 4.txt, what happens? The file isn't deleted, and git starts showing an error. The following file has local modifications. This means
+
+00:37:28 - 00:38:37
+git isn't allowing the deletion because it has detected uncommitted changes in that file. Before you can remove it, you either have to commit those changes or confirm that you truly want to discard them. If you are sure you want to delete the file anyway, you can force it by using git rm {slash} f 4.txt. As soon as you run this command, the file is forcefully deleted. If you check your file explorer, you'll see that 4.txt is gone. Now, let's look at another situation. I'll run another hard
+
+00:38:01 - 00:39:15
+reset. git reset {dash} {dash} hard This brings everything back again. I will now modify the file 4.txt by writing hello inside it. Now, if I type git rm {dash} {dash} cached 4.txt this removes the file from the staging area, but keeps it physically in your working directory. Let's check it with Git status. You'll see that 4.txt has moved to the untracked file section. It's no longer staged, but the file itself still exists in the system. That's the difference between the {dash}{dash}force and {dash}{dash}cached
+
+00:38:39 - 00:39:50
+flags. The {dash}{dash}force flag completely deletes the file, while the {dash}{dash}cached flag only removes it from staging, keeping the actual file intact in your working directory. Another useful command is git rm {dash}r folder. Here, the {dash}r flag stands for recursive. This means if the folder contains other subfolders or files, all of them will be removed recursively. If you only mention the folder name without {dash}r, then only that folder will be removed, not its contents. All right, let's try this out. But
+
+00:39:15 - 00:40:19
+first, I'll reset everything again by typing git reset {dash}{dash}hard. Now that the reset is done, we'll experiment with our myfolder, okay? In the terminal, I will type git rm {dash}r myfolder. And as you can see, the folder has been deleted from our file system as well. If we now check the status using git status, we'll notice that myfolder is listed as deleted and has already been staged automatically. Now, I'll reset everything again by typing git reset {dash}{dash}hard. Perfect. So far,
+
+00:39:46 - 00:40:52
+we have made quite a few commits, right? Now, let's learn how to view those commits. Basically, viewing commits means checking the commit log, and doing that is very simple. In the terminal, just type git log. That's it. Instantly, you'll see the full commit history. Here, we can see three commits, right? Along with each one, there are details and messages that clearly describe what was done in that commit. You will also notice some long random strings. Those are commit IDs. Using these IDs, we can
+
+00:40:19 - 00:41:18
+go back to previous versions later on. Don't worry. We'll learn how to do that soon. For now, just remember this part. The first two commits were created when we made files while setting up our GitHub repository, and the last one was made when we modified some files recently. Now, if you want to view this log in a cleaner, more compact format, you can use this version of the command. Git log {dash} {dash} one line. Once you run it, you'll see a nice short summary of each commit with just the essential
+
+00:40:49 - 00:41:47
+information. The unique commit IDs are also shown in a shortened format. These shortened IDs can also be used to return to any previous version later on. Now, let's move on to one of Git's most powerful and important features, branching. At the moment, our repository has only one branch. A branch in Git is like a separate line of development where you can work independently. If you check the online repository we cloned earlier, you'll see that the default branch is called main. It used to be
+
+00:41:18 - 00:42:15
+known as the master branch before. This is the default branch where all work begins. In recent times, Git has shifted from calling it master to main, but the idea remains the same. The main branch is your project's central line of development. To understand the concept of branching more simply, imagine you are working in the kitchen of a large restaurant. The main branch is the main kitchen where all the dishes are prepared and served to customers. Now, if your client wants to try a new dish
+
+00:41:47 - 00:42:42
+or recipe, you wouldn't experiment directly in that main kitchen because if something goes wrong, it could ruin everything. Instead, you create a separate test kitchen where you can safely prepare and test the new dish. Once the recipe is perfected, you bring it back into the main kitchen to serve it officially. Git works exactly the same way. Instead of making changes directly in the main branch, you create a separate development branch where you test and commit all your changes. Once everything
+
+00:42:14 - 00:43:11
+is stable and verified, you merge that branch back into the main branch. This ensures your main project stays safe, while new features can be developed and tested without breaking anything. In short, branching in Git provides a secure and organized intermediate step that allows you to review, test, and manage changes before merging them into the main code base. Now, since I have already mentioned the word merge, let's understand what it really means. Merge simply means combining the changes from two branches
+
+00:42:43 - 00:43:42
+into one. It's an important concept for understanding how branches work. In Git, you can create multiple branches, like staging, development, front-end, or back-end, and work on each of them separately. Once all the changes are finalized and tested, they're merged back into the main branch. Right now, our application has only one branch. To see how many branches we have, we can type in the terminal, Git branch. This command shows the list of all branches. At the moment, we have only one, and the
+
+00:43:12 - 00:44:17
+branch we're currently in has a star next to it. To create a new branch, we simply write Git branch followed by the branch name. For example, let's type Git branch development. Now, if we run the same command again, like Git branch, we'll see two branches listed, main and development. That star next to main means we are still on the main branch. When a new branch is created, it takes the exact state of the branch you were on at that moment. So, in this case, the development branch is an exact copy of
+
+00:43:45 - 00:44:41
+the main branch. Remember, whenever you create a new branch, it inherits the current state of the branch you are in. Now that we have created a new branch, let's switch to it. To move to the development branch, type Git checkout development. We are now inside the development branch. If we check the current status using Git status, we'll see that everything looks clean, because the development branch has been created with the same content as the main branch and it was clean before. Now, let's go
+
+00:44:13 - 00:45:20
+to our file system and create a new file named three.txt. Inside it, we'll write three. Then, back in the terminal, if we type git status, we'll see that there's a new file. To stage it, we type git add dot. And to commit it, we write git commit {slash} m, I created three.txt and entered three there. Now, our commit is done inside the development branch. Next, let's switch back to the main branch. To do that, we type git checkout main. Now, we have moved from the development branch back to the main
+
+00:44:47 - 00:45:45
+branch. If you check your file system now, you will notice that the three.txt file is no longer there. Why? Because the changes made in the development branch exist only in that branch. Those changes haven't been merged into the main branch yet. The moment you switch back to the main branch, Git automatically hides the changes made in development, showing you only what exists in that main branch. This demonstrates just how much control Git has over your file system. When you switch branches, Git instantly adjusts
+
+00:45:16 - 00:46:15
+which files are visible so that you only see the changes relevant to that specific branch. There's no duplication or conflict in your file system. Git manages everything seamlessly. In this way, you can create hundreds of branches, each containing its own set of changes, and Git will always show you a separate, isolated view for each one. But remember, for any change to actually take effect, you must commit it. Whatever branch you are working in, the commit must be made there. Once committed, Git understands that those
+
+00:45:46 - 00:46:49
+changes belong exclusively to that specific branch. That's why when you switch back to the main branch, the changes made in the development branch don't appear there. Now, let's say we make a new change to the four.txt file while we are on the main branch. Let's add a four to it. Then, if we check the status by typing git status, we'll see the new change. Let's stage it using git add. and commit it with git commit -m I changed 4.txt and added additional four. Now, both branches have changes. The
+
+00:46:17 - 00:47:22
+main branch has this new commit and the development branch still has its previous one. Since both branches now contain updates, we'll merge the changes from the development branch into the main branch. But first, let's start by merging the main branch into the development branch just to synchronize everything. So first, we switch to the development branch by typing git checkout development. Now that we are inside the development branch, we will run git merge main -m merging main into development. After the merge, you'll
+
+00:46:50 - 00:47:46
+notice that the changes made in the main branch have now appeared inside the development branch as well. For example, the updated 4.txt file is now present in the development branch alongside the previous changes. In short, updates of both branches have been combined and the development branch now reflects all the latest modifications. Next, let's switch back to the main branch by typing git checkout main. Once we are back on the main branch, we can see that the changes from the development branch haven't yet appeared
+
+00:47:18 - 00:48:19
+here. So now, from the main branch, we'll merge everything from the development branch by typing git merge development /m merging on main with development. After running this command, you'll see that the 3.txt file from the development branch has now appeared in the main branch as well. That means both branches changes have been successfully merged and the merge process is complete. However, sometimes during a merge, conflicts may occur. A merge conflict happens when the same part of the same
+
+00:47:48 - 00:48:53
+file has been changed differently in two branches. For example, if you modified 1.txt in the main branch and someone else modified the exact same section of 1.txt in the development branch, Git won't know which version to keep. In such cases, Git flags the file as having a conflict, and you will have to resolve it manually by deciding which changes to keep or by merging both versions yourself. Right now, we are on the main branch. From here, we will create a new branch so that the main branch remains
+
+00:48:20 - 00:49:31
+untouched while we simulate a conflict. Let's move ahead quickly. I run the command Git branch staging to create a new branch named staging. This branch now contains all the latest updates from main. Then, I switch to it using Git checkout staging. While working on the staging branch, I open my file system and go to the file named 4.txt. At the end of this file, there was the number four. I add 44 at the end and save the file. Now, the staging branch has a change. When I run Git status, I can see that
+
+00:48:56 - 00:50:21
+the change is being tracked. So, I add and commit it by running Git add dot, and then Git commit {slash} m changed 44. The staging branch work is done. Next, I switch back to the development branch by running Git checkout development. When I open 4.txt here, I don't see 44 I added earlier in the staging. So, I write 444 and save the file. Then, I run Git add dot, and commit it with Git commit {slash} m added 444 on 4.txt. That means the development branch now has its own separate change. Now, while staying in the development
+
+00:49:39 - 00:50:44
+branch, I try to merge the changes from the staging branch using Git merge staging. But, Git fails to merge automatically and shows an error. Automatic merge failed. Fix conflicts and then commit the result. This happens because the same line in 4.txt was modified in both branches, staging and development. Git can't decide which version should take priority, so it leaves the decision to us. In this case, the developer working on the development branch, or whoever is managing it, has to manually resolve the
+
+00:50:11 - 00:51:16
+conflict. When you open 4.txt in a text editor, Git marks the conflicting section clearly, showing which part came from staging and which part came from development. You'll see both the double four from staging and the triple four from development. It's now up to you to decide whether to keep one, remove one, or combine both changes. While staying on the development branch, you decide which version to keep. Let's say you choose to keep the triple four. You remove all the conflicting markers,
+
+00:50:43 - 00:51:59
+save the file, and then run git add. Followed by git commit -m merge conflict solved. The commit message is merge conflict solved. Now, you switch back to the staging branch using git checkout staging. When you open the file system and check 4.txt, it still shows double four, meaning no change has been applied yet. At this point, you can choose to merge changes either into staging or development since both branches are now in sync. Let's say we decide to resolve it from staging. We run the command git merge
+
+00:51:22 - 00:52:24
+development. This time, Git merges everything smoothly without any conflict because both sides now contain the same content. When you check the status using git status, it shows everything is clean. Now, if we want to bring these merged changes into the main branch, we switch to it using git checkout main. Once we are on the main branch and open the file system, we notice that 4.txt doesn't yet have the latest update. So, we merge the staging branch with git merge staging. Immediately, all the
+
+00:51:53 - 00:52:54
+latest changes flow into the main branch. The double four from staging and the triple four from development now combine perfectly, resulting in the final merged version. And that's how the entire process of merging and resolving merge conflicts is completed. So far, we have learned how branching works. We have already seen how to switch from one branch to another using the checkout command. Now, earlier when we talked about git log, I mentioned that we can also go back to a previous version using a commit ID.
+
+00:52:23 - 00:53:35
+That's what we are going to see now. And to do that, we will again use the checkout command. First, let's check our commit history. We can do that by running git log {dash} {dash} one line. Right now, we have nine commits in our log. Now, let's make a small change. I open the 1.txt file and write hello inside it. Then I stage it by running git add {dot}. And commit it using git commit {slash} m update 1.txt file. Next, I again run git log {dash} {dash} one line. And all the commits are nicely
+
+00:53:00 - 00:54:04
+displayed. Now, I want to switch back to one of my previous commits, specially the one named merging main into development. To do that, I'll simply copy the commit ID of that commit and type git checkout that commit ID. Earlier, when we switched branches, we used the branch name. But this time, we are using a commit ID instead. Remember, your commit ID will be different from mine. After running this command, the project will move from the main branch to the exact state it was in at that previous
+
+00:53:31 - 00:54:26
+commit. However, you must ensure that all your changes on the main branch are tracked and committed before doing this. If there are many untracked or uncommitted files, git won't allow you to check out to a previous version. Once you run the command, you'll see that in the terminal, instead of showing main, it now says head detached at your commit ID. That means you have successfully switched to that particular commit. If you open one.txt now, you'll notice the hello line you added earlier is no
+
+00:53:59 - 00:54:58
+longer there. That confirms you have returned to the previous version of your project. But now, suppose you want to go back to your latest state. That means returning to the main branch. In that case, you will use the same command as before. Git checkout main. Perfect. Now, you have switched back to the main branch, meaning you're back to the most recent version of your project. So, we have seen how to switch between commits, how to move from one version to another. Now, let's explore something new.
+
+00:54:28 - 00:55:33
+How to compare one commit with another. If we want to see the differences between our current commit and a previous commit, what lines of code were added, what lines were deleted, we can do that easily using Git commands. Before that, let's first check our commit history again by typing Git log {dash} {dash} one line. We can see that there are now 10 commits in total. Now, we'll compare the commit update one.txt file with the previous one, that means merging main into development. For that, we'll need the commit IDs of
+
+00:55:01 - 00:56:08
+both. Since we have already run Git log, we can just copy those two IDs. Once we have them, we'll write the command Git diff, d i double f, then the first commit ID, space, then the second commit ID. After running this command, Git will show us the exact changes made between those two commits. The terminal will display which files were changed, what was removed in red, and what was added in green. Also, notice one important detail. In Git diff, we place the most recent commit ID first and the older one
+
+00:55:35 - 00:56:35
+second. This means Git will show differences from the perspective of the newer commit. What's newly added or removed compared to the older one. If you reverse the order, that means putting the older commit ID first and the newer one second, Git will show the opposite perspective. Try running the command both ways a few times. You'll easily understand how the comparison works. All right, just a quick reminder. Right now, you can't exit the terminal view because you are inside the log window. As I mentioned
+
+00:56:05 - 00:57:09
+before, to exit from there, simply press Q on your keyboard. That will close the log view immediately. So far, everything we have done has been inside our local repository, meaning we have staged files, made commits, and stored everything locally. But our real goal is to send those updates to the remote repository like GitHub. When we send local changes to a remote repository, that process is called a push. And if any changes have been made in the remote repository that you want to bring into a local repository, we use fetch.
+
+00:56:37 - 00:57:44
+When you run Git fetch, the remote changes are downloaded into your local repository's memory, but they won't appear in your working directory yet. To actually update your working directory and see those changes in your files, you need to run Git pull. So, in short, push means sending local changes to the remote. Fetch means bringing remote changes into your local repository, but not merging them yet. And pull means fetching plus merging. So, your working directory immediately reflects the remote changes.
+
+00:57:10 - 00:58:11
+In other words, Git pull is equal to Git fetch plus Git merge. Let's see an example of how Git push works. We have already made several changes in our local repository, and now we want to push them to the remote main branch. Since we are currently on the main branch, the command will be Git push origin main. Here, origin refers to the remote repository, and main is the branch you want to push to. After running this command, all your latest commits will be sent to the remote main branch. If you
+
+00:57:41 - 00:58:43
+check your repository on GitHub, you'll see that everything is updated. However, only the main branch is pushed. Other branches aren't uploaded yet. This means we have only pushed our main branch to the remote's main. Now, if we switch to the staging branch using Git checkout staging, and then run Git push origin staging, Git will create a new branch named staging in the remote repository and push all your staging changes there. When you check GitHub again, you'll see that the staging branch has been created
+
+00:58:12 - 00:59:19
+and updated. Similarly, if you switch to the development branch by running Git checkout development and then Git push origin development, the development branch will also be uploaded to the remote. So, now all three branches, main, staging, and development, are fully synced with the remote repository. Finally, I switch back to the main branch again using Git checkout main. By now, the concept of Git push should be crystal clear. Now, imagine we have already pushed our local changes to the remote. Let's see how fetch works.
+
+00:58:46 - 00:59:45
+Suppose we make a change directly on GitHub. For example, we open the file 3.txt on GitHub, type three, and commit the change. Now, the remote main branch has a new update that our local main branch doesn't yet have. It's behind the remote version. While staying on the local main branch, I want to bring in the latest changes from the remote. So, I run the command Git fetch. Git immediately fetches the new changes from the remote repository, but those updates don't yet appear in your local
+
+00:59:15 - 01:00:22
+file system. For example, you won't see any update in 3.txt until you merge the fetched changes. Once you run Git merge, the remote changes will finally reflect in your local working directory as well. Now, let's say we edit the remote 3.txt file again. This time we add 33 after three and commit it on GitHub. The remote main branch is now ahead once more. To bring in all those updates and merge them into your local main branch at once, we use git pull. Git pull automatically performs both
+
+00:59:49 - 01:00:51
+fetch and merge in a single command, which means all the new remote changes, including the latest updates in 3.txt, will immediately appear in your local files. So, that's how git pull helps you fetch and merge all remote updates into your local repository in one go. We have now learned how to push changes from local to remote, fetch changes from remote without merging, and pull changes from remote while merging them automatically. These three commands, push, fetch, and pull, are among the most frequently used git operations and
+
+01:00:20 - 01:01:18
+are more than enough for most of our daily development work. Now, let's move on to something new. Imagine you are working on a project. You start developing a new feature, writing a lot of new code, and modify several existing files. After some time, you realize that the approach you took isn't working at all. But by then, you have already made changes across 10 to 15 different files. Some with new code, some heavily modified. In this situation, you want to discard everything and go back to the
+
+01:00:49 - 01:01:49
+previous state. Now, think about it. Would you really open each of those 10 to 15 files manually? Remove all the new lines and try to restore the old code one by one? How accurate or even possible would that be? Probably not at all. In this case, the simplest answer is it's actually not possible, almost impossible. And the complicated answer is you could try doing it manually, but there's no guarantee everything will return to its exact previous state. And this is exactly where the magic of the git
+
+01:01:19 - 01:02:27
+restore command comes in. The git restore command helps you revert any files or directory back to its previous state, that is to the state of the last commit. It's mainly used to undo local uncommitted changes or to remove changes that were added to the staging area using Git add. Let's test it out. Suppose in the one.txt file, I write new feature. Remember, this repository already had some committed history. Now, I'm just trying to develop a new feature, but after writing the new code, I realized
+
+01:01:53 - 01:02:57
+that the change I made in one.txt adding new feature was actually a mistake. The previous version was fine and since this change isn't ready to be committed, I want to undo it and go back to the last committed state. To do that, I'll simply run Git restore one.txt. As soon as you run this command, the file instantly reverts to its previous state, the exact version from the most recent commit. If you want to restore an entire directory instead of a single file, just type the directory name after Git
+
+01:02:25 - 01:03:35
+restore and it will bring everything in that folder back to the last committed version. And if you want to undo all changes across the entire repository, you can run Git restore. This will restore every file to its last committed state. Now, if you have already staged some changes using Git add, you can still undo them using the dash dash staged flag. For example, Git restore dash dash staged file name or Git restore dash dash staged dot. This removes the files from the staging area, but keeps the working directory
+
+01:03:00 - 01:04:00
+unchanged. So, in summary, the Git restore command helps you bring any file or directory back to its previous or last committed state. It's mainly used to undo local uncommitted changes before they're ever committed. Now, let's move on and talk about Git stash. Now, imagine this. You are working on a new branch developing a big feature. It's a long process and you have already finished about half of it. But, the work isn't yet in a state to be committed. Suddenly, another developer messages you
+
+01:03:31 - 01:04:25
+saying there's a new update on a different branch and you need to check it out and give feedback. Now, the question is, how will you switch branches without losing your unfinished work? Are you going to throw away all your progress using the Git restore command? Of course not. There's no reason to go through that kind of hassle when Git gives us a much smarter way to handle this using the Git stash command. With Git stash, you can temporarily set aside your unfinished work, switch to another
+
+01:03:58 - 01:04:58
+branch to do something else, and later bring all your changes back with a single command. Let's see how it works with an example. Suppose in our 1.txt file, you write another feature. You are currently on the main branch. Now, let's say you need to switch to the development branch to review a new feature. So, you type Git checkout development. But, Git throws an error. Your local changes to the following files would be overwritten by checkout 1.txt. Please commit your changes or stash them before
+
+01:04:27 - 01:05:24
+you switch branches. Aborting. This means because Git doesn't allow switching branches when there are uncommitted changes, it's protecting your work. But, since your feature isn't ready to be committed, this is exactly when we use Git stash. So, you can run Git stash. The moment you execute this command, your uncommitted changes disappear from your working directory. But, don't worry. They are not lost. Git has safely stored them in a temporary area called the stash. This lets you
+
+01:04:56 - 01:05:53
+freely switch branches without affecting your unfinished work. Now, let's switch to the development branch. Git checkout development. You have now successfully switched branches. You can review the new feature, make notes, do whatever you need to. Once you are done, you switch back to your main branch again. Git checkout main. But now, when you look around, you'll see that your unfinished feature, the one you were working on earlier, isn't there. Don't panic. It's still saved
+
+01:05:24 - 01:06:29
+safely in the stash. To bring it back, you just need to pop it out of the stash using the command Git stash pop. As soon as you run this, all your stashed changes reappear in your working directory. The pop command restores the most recently stashed work, and simultaneously removes it from the stash list. If you have stashed multiple times, Git keeps them all in order, newest on top, oldest at the bottom. When you pop, it brings back the most recent one first. But if you want to reapply the stashed
+
+01:05:57 - 01:07:00
+changes without removing them from the stash list, so that you can reuse them later, you can use the apply command instead. For example, Git stash apply. This way, your changes are restored, but they also remain safely stored in the stash for future use. So, now I run Git stash again, and then this time I type the command Git stash apply. After running it, you'll notice it behaves almost the same before. The changes come back just like when we used pop. All right, now let's understand the
+
+01:06:28 - 01:07:41
+difference more clearly. We already know that Git can store multiple stashes, and we can even view a list of all those stashed changes. To see that list, we type Git stash list. Once you run this command, you'll see a list of all your saved stashes. If you look closely, you'll notice that each stashed item is marked with an identifier like stash zero, stash one, and so on. You can use these identifiers to apply or pop specific stashes as well. For example, Git stash pop stash zero, or Git stash apply stash zero. Both
+
+01:07:05 - 01:08:06
+commands will work. The only difference is how they handle the stash afterward. Let's walk through this difference step by step. First, I check my stash list using git stash list. And I see there's just one stash in the list. Since I already ran git stash apply once, the stash item is still there in the list. To understand this better, let's first remove that stash manually using the git stash drop command. The drop command basically removes a specific stash from the stash list. All right. So, in the
+
+01:07:35 - 01:08:45
+terminal, we will simply type git stash drop. Now, if we check our stash list, we will see that it's completely empty. Type in the terminal git stash list. See, the stash list is totally empty now. Since we previously used git stash apply, all the changes are still in our working directory. We can confirm that by typing git status. Let's do that. Git status. And as you can see, the changes we applied are still there. Now, let's go ahead and stash those changes again by typing git stash.
+
+01:08:11 - 01:09:19
+That means we have stored our changes back into the stash. Next, let's check our stash list again. Type in the terminal git stash list. What do you have here? We can see there's just one stash entry. So, now we are going to look at the difference between pop and apply. Now, I run git stash pop. The stashed changes are successfully restored into my working directory. Then I check the list again with git stash list, and this time the list is empty. That's because pop brings your changes back and removes
+
+01:08:45 - 01:09:52
+them from the stash list. It's like taking them out permanently, like cut. That's because pop brings your changes back and removes them from the stash list. It's like taking them out permanently. Now, let's stash something again. I run git stash and check the list once more. Git stash list. This time I see one stash item again. Now I run Git stash apply. The command works perfectly. My files are restored just like before. But when I check the stash list again using Git stash list, boom,
+
+01:09:18 - 01:10:20
+the stash is still there. It didn't disappear. So, here's the key difference. Git stash pop restores your changes and removes them from the stash list, while Git stash apply restores your changes but keeps them in the stash list for future use. That's exactly what I wanted to show you. I walked you through both commands so you can clearly understand how they behave differently. Hopefully, now the concept is crystal clear. Now, let's talk about Git revert. The Git revert command is used to undo
+
+01:09:49 - 01:10:51
+the changes made in a previous commit. But instead of deleting that old commit, it creates a new one that reverses those changes. In other words, it cancels out the effects of a previous commit while keeping the project history completely clean and traceable. That's why it's called revert because it doesn't delete any commit. Rather, it creates a new commit that brings back the project to its previous correct state. Simply put, Git revert means fixing an old mistake without erasing it. For
+
+01:10:20 - 01:11:32
+example, imagine you accidentally added too much salt while cooking. Instead of throwing the whole dish away, you adjust the flavor by adding some extra ingredients to balance the saltiness. Similarly, Git revert doesn't delete the faulty commit. It corrects it through a new one. Now, to revert something, you will need its commit ID. Let's see an example. Suppose in the file 3.txt, you added the line hello three. Then you ran Git add dot. Then Git commit minus M hello three. Now, if you check the log using Git log
+
+01:10:56 - 01:12:02
+one line, you'll see, Let's say you realize that the hello three commit has introduced a bug and you want to remove it. Before that, copy the commit ID of hello three and then run git revert that commit ID. After running the command, you'll see a prompt asking for a commit message. You can either type a custom message or simply keep the default one and exit it by typing colon wq. That means write and quit. Once you do that, the changes from hello three will be undone. Now, if you check the logs again using
+
+01:11:29 - 01:12:28
+git log one line, you'll notice there's a new commit added specifically for the revert. At this point, you might be reminded of git reset, right? The main difference between git reset and git revert lies here. Git reset can take you back to a specific commit and discard all commits after that point without creating any new commit. On the other hand, git revert removes the changes from a specific commit by creating a new one that reverses it. So, if your project is on GitHub or any remote repository,
+
+01:11:59 - 01:12:57
+other contributors can also see the revert commit, ensuring clarity and preventing confusion. Another key point is if you check the logs after a reset, there will be no record of the removed commits. But, when you use revert, you will clearly see an additional commit indicating that a revert took place. Crystal clear. Now, let's talk about git rebase. Imagine you are starting to work on a new feature. So, you create a new branch called feature by checking out from the main branch. You begin developing the new feature,
+
+01:12:28 - 01:13:26
+making changes bit by bit, and committing your progress as you go. Meanwhile, another developer adds more updates to the main branch for production. Now, you also want to include those latest updates from the main branch into your feature branch. So, what can you do? Well, there are several ways to handle this. As we have seen before, one option is to merge the main branch into your feature branch. If you do that, git will create a new merge commit and all the latest updates from main will be merged into
+
+01:12:56 - 01:14:00
+your feature branch. However, note that merging always creates an additional commit. You can see it clearly if you run git log. Some developers find these extra merge commits a bit messy and if you continue merging multiple items, your commit history can look quite cluttered. In such cases, a better solution is to use git rebase. When you perform a rebase, the base of your feature branch changes. That means if you rebase onto main, all the new commits from main will be applied directly into your feature branch. Then,
+
+01:13:29 - 01:14:40
+all your feature branch commits will be reapplied on top of them. So, while your main branch's code content remains the same, the commit history becomes much cleaner and more linear. You can easily verify this using git log. Now, let's understand this with an example. Let's say we create a new branch called feature from main. git branch feature Then, we switch to that branch. git checkout feature Now, we are inside the feature branch. Let's open 1.txt and add the line adding dark mode functionality. Then, stage it.
+
+01:14:03 - 01:15:18
+git add dot and commit it. git commit minus m adding dark mode functionality Now, let's switch back to the main branch. git checkout main We are now in the main branch. Let's create a new file called 2.txt and write inside it adding dark mode UI. Then, stage and commit it. git add dot git commit minus m adding dark mode UI Done. That means our main branch now has a new feature. dark mode UI Now, we want that same dark mode UI update to appear in our feature branch as well. So, first we switch back to our
+
+01:14:41 - 01:15:41
+feature branch. git checkout feature We are now inside the feature branch again. Our goal is to bring the latest updates from the main branch into the feature branch. But, this time we will do it using rebase. How do we do that? To perform a Git rebase, you need to be on the branch you want to rebase, and then specify the branch from which you want to bring that changes. For example, if you are currently on the feature branch and you want to bring in the changes from the main branch, the command will be Git rebase main. That's
+
+01:15:12 - 01:16:09
+it. Once you run this command, the rebase will be completed smoothly, and the dark mode UI update from the main branch will now appear in your feature branch. Here's what actually happens behind the scenes when you use rebase. Git first identifies the most recent common commit shared between your current branch, that means the feature branch, and the branch you are rebasing onto, that means the main branch. Then, all the commits in your feature branch that come after that common commit are temporarily set aside.
+
+01:15:40 - 01:16:42
+Next, Git applies all the new commits from the main branch into your feature branch. Finally, it reapplies the saved commits from the feature branch on top of those main commits, one by one. The result is a clean, linear commit history, much tidier than what you get with merging. You can easily see this difference by running Git log. However, even though Git rebase is very powerful, it's not recommended to use it on public repositories or branches where multiple developers are working together. If you must use it, you should
+
+01:16:11 - 01:17:09
+always inform your team beforehand. Otherwise, it can cause serious issues. The reason is rebase rewrites existing commit history. Even the commit IDs change. So, if someone else is working on the same branch, your rebased commits won't match their local copies anymore, and they won't be able to pull or sync normally. Therefore, before using rebase, make sure you fully understand where you are applying it and whether it could cause problems for your collaborators. It's perfectly safe to use rebase on your
+
+01:16:40 - 01:17:43
+your or personal branches where only you are working. Just avoid rewriting commits that already exist on a shared remote branch. Now, before we wrap up this tutorial, let's discuss one last important topic, the pull request. When working with Git and GitHub, the term pull request, often shortened as PR, comes up frequently. A pull request is essentially a request you make to merge your changes into another branch, usually the main branch. It's a way of saying, "I have made some changes in my
+
+01:17:12 - 01:18:11
+branch. Please review them, and if everything looks good, merge them into the main branch." In other words, you can't directly make changes to someone else's repository. So, when you finish your work in your own branch, you create a pull request to ask for permission to merge your code into the main repository. That's what we call a pull request. All right, let's head back to our Git Journey repository on GitHub. By now, we have already pushed our main, staging, and development branches.
+
+01:17:42 - 01:18:45
+At the top of the GitHub page, you will notice several tabs: code, issues, pull requests, and actions. We'll now click on the pull requests tab. Here, we'll see a big green button labeled new pull request. This is where you can see, "I want to merge the changes from this branch into another branch." Once you click new pull request, GitHub will show you two drop-down menus. Base, the branch where you want to merge the changes. We'll select main here. And compare, the branch from which you want
+
+01:18:13 - 01:19:12
+to bring the changes. We'll select development. In other words, we're saying, "I have made some updates in the development branch, and now I want those updates to be merged into the main branch." GitHub will automatically show a detailed comparison, which files have been modified, which lines have been added, and which ones have been removed, everything clearly visible. If everything looks good, scroll down and click create pull request. Then, give your PR a title such as merge
+
+01:18:42 - 01:19:47
+development updates into main. And in the description box, write something like, "This PR adds the latest updates and fixes from development to main." After that, click create pull request to submit it. Now, if you go back to the pull requests tab, you'll see your newly created PR. Development to main. Clicking on it, you'll find three sections. Conversation, where you and your teammates can discuss or comment on the changes. Commits, which lists all the commits included in this PR.
+
+01:19:14 - 01:20:14
+Files changed, which shows exactly what changes are made in which files. If everything looks good after review, click the green merge pull request button at the top. And then confirm by clicking confirm merge. Once it's done, GitHub will display a message saying, "Pull request successfully merged and closed." That means all the updates from the development branch have now been successfully merged into main. This is how pull requests make code management so easier. Every change gets reviewed
+
+01:19:44 - 01:20:42
+first and then merged into main. As a result, the main branch always stays stable, and the entire team can collaborate safely and efficiently. That's how software companies use Git and GitHub. This was my complete tutorial series on Git and GitHub, where I tried to explain all the essential day-to-day concepts in the most simplest way possible. I truly believe this series will be specially helpful for those who are just getting started. If you have always felt a bit intimidated or confused about using Git
+
+01:20:13 - 01:21:13
+for the first time, these videos were made exactly for you. In short, we have learned how to create a local repository using Git init from our working directory, how to stage files, commit them to update the local repository, and finally, how to push that code to a remote repository, or clone a remote one to work locally. Hopefully, by the end of this video, you now have a clear understanding of how Git works. And one more important thing, on my Logic Based Labs Facebook page, I have published a
+
+01:20:43 - 01:21:36
+Git cheat sheet, which is especially useful for beginners. It's completely free, so feel free to grab your copy right now. The link is available in the video description. If you found this video helpful, don't forget to give it a like and subscribe to the channel because I have got plenty more valuable topics coming up next. And yes, if you have any feedback or suggestions about this video, please share them in the comment section. I read every comment and try my best to reply every comment
+
+01:21:10 - 01:21:18
+as well. Stay well, and I will see you in the next video.

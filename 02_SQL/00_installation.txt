@@ -1,0 +1,46 @@
+===================== MacOS installation =====================
+
+1)
+brew install mysql        # 1. install (server + client)
+brew services start mysql # 2. start it, and on every login
+mysql -u root             # 3. connect (no password on a fresh install)
+
+Optionally mysql_secure_installation to set a root password, then connect with mysql -u root -p.
+
+Verify with mysql --version and brew services list.
+
+
+2)
+- /usr/local/mysql/bin/mysql exists ✅
+- /usr/local/mysql/bin is not in your $PATH ❌
+
+Why: you used the official MySQL .dmg installer (that's the System Settings pane in your screenshot — Base Directory /usr/local/mysql). Unlike Homebrew, it
+drops binaries in /usr/local/mysql/bin and never adds that folder to your shell's PATH. zsh only searches the directories in $PATH, so it can't find mysql.
+
+Fix
+
+1. Add it to your ~/.zshrc
+
+echo 'export PATH="/usr/local/mysql/bin:$PATH"' >> ~/.zshrc
+
+2. Reload the shell
+
+source ~/.zshrc
+
+(Or just open a new terminal tab.)
+
+3. Verify
+
+which mysql       # → /usr/local/mysql/bin/mysql
+mysql --version
+
+Then connect
+
+Make sure the server is running first — System Settings → MySQL → Instances tab → it should say "running" (if not, click Start).
+
+mysql -u root -p
+
+Password is the root password you set during the .dmg install. If you skipped it, the installer showed a temporary password in a dialog — reset it with sudo
+/usr/local/mysql/bin/mysqladmin -u root password.
+
+==========================================================================

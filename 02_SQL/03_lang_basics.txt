@@ -1,0 +1,91 @@
+1)    SQL (Structured Query Language)
+        A language used for interacting with relational database management systems (RDBMS)
+        • Not a programming language in the traditional sense
+        • But I can use it to give instructions to an RDBMS
+        • SQL = the language I speak to talk to my database software
+
+2)    Why I need SQL at all
+        An RDBMS doesn't understand English — it only understands SQL
+        • I can't just say "hey, get me this piece of information"
+        • RDBMS is a software application that creates and maintains a relational database
+        • It makes sure my data is structured correctly and stored the right way
+        • So to ask it for anything, I have to write SQL
+
+3)    What I can do with SQL
+        Pretty much everything a database needs
+        • Create, retrieve, update and delete data (C.R.U.D)
+        • Create and manage different databases
+        • Design and create database tables
+        • Define a database schema — the overall table design
+        • Administrative tasks: security, user management, import/export, backup
+
+4)    SQL implementation varies between systems
+        There's a formal specification, but every RDBMS implements it a little differently
+        • Postgres, MySQL, Oracle, Microsoft SQL Server — each has its own flavour
+        • Code written for one may not work 100% on another
+        • Usually only a couple of small tweaks needed
+        • Concepts are the same, implementation may vary
+        • Watch out: don't assume SQL copied from one system runs as-is on another
+
+5)    SQL is a hybrid language
+        It's really four types of languages mashed into one
+        • Data Query Language (DQL)
+        • Data Definition Language (DDL)
+        • Data Control Language (DCL)
+        • Data Manipulation Language (DML)
+        • Worth knowing because error messages and docs use these terms
+
+6)    Data Query Language (DQL)
+        Used to query the database for information that's already stored
+        • I write a query saying what pieces of info I want
+        • RDBMS goes and fetches only that
+        • DQL = getting existing data out
+
+7)    Data Definition Language (DDL)
+        Used to define database schemas — the overall layout
+        • What tables exist in the database
+        • What columns those tables have
+        • What data types those columns can store
+        • DDL = designing the structure, not the data
+
+8)    Data Control Language (DCL)
+        Used for controlling access to the data
+        • Configure users and permissions
+        • This user can write to this table
+        • This user can only read from this table
+        • This user can update and delete
+        • DCL = who is allowed to do what
+
+9)    Data Manipulation Language (DML)
+        Used for inserting, updating and deleting data in the database
+        • Changing the actual records, not the structure
+        • DML = editing the data itself
+
+10)    Queries
+        A set of instructions given to the RDBMS, written in SQL, telling it what information to retrieve
+        • Databases can hold millions or billions of records
+        • Data is often spread across different tables in a complex schema
+        • A query pulls the scattered pieces together and organises them how I want
+        • Query = asking the database a specific question
+
+11)    Why queries matter
+        The goal is to get only the information I need
+        • Without it I'd have to grab everything, then parse through it myself to find one value
+        • Instead I tell the RDBMS exactly what I want
+        • It sends back just that piece, not the whole database
+        • Much faster and much less data moved around
+
+12)    Example Query
+        Get the name and age of every employee earning over $30,000
+        • Syntax: SELECT table.col1, table.col2 FROM table WHERE condition;
+        • Example: SELECT employee.name, employee.age FROM employee WHERE employee.salary > 30000;
+        • SELECT => which columns I want back
+        • FROM => which table to pull them from
+        • WHERE => the condition that filters the rows
+
+13)    Wrap Up
+        • SQL is the language used to talk to relational database management systems
+        • It handles C.R.U.D, schema design and admin tasks
+        • Every RDBMS implements it slightly differently
+        • It's four languages in one: DQL, DDL, DCL, DML
+        • Queries let me pull out exactly the data I need and nothing more

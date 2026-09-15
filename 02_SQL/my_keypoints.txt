@@ -1,0 +1,34 @@
+1)  Change password
+
+    ALTER USER 'root'@'localhost' IDENTIFIED BY '<password>';
+
+2)  Create Database
+
+    create database <db_name>;
+
+3)  SQL reserved words
+
+    CREATE
+    TABLE
+
+4) Create Table
+
+    CREATE TABLE student (
+        student_id INT,
+        name VARCHAR (20), major VARCHAR (20),
+        PRIMARY KEY (student_id)
+    );
+
+5)  Describe Table
+
+    DESCRIBE student;
+
+6)  Delete Table
+
+    DROP TABLE student;
+
+7)  Modify Table
+
+    ALTER TABLE student ADD gpa DECIMAL(3,2);
+
+    ALTER TABLE student DROP COLUMN gpa;

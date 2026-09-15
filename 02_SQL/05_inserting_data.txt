@@ -1,0 +1,62 @@
+1)    INSERT INTO
+        The command that puts an actual row of data into a table I've already created
+        • Syntax: INSERT INTO table_name VALUES(val1, val2, val3);
+        • Example: INSERT INTO student VALUES(1, 'Jack', 'Biology');
+        • Ends with a semicolon like every SQL command
+        • Success message shows "Rows affected: 1"
+
+2)    Order of the values matters
+        The values must go in the same order the columns were defined in the table
+        • student table was made as: student_id, name, major
+        • So I insert in that exact order — ID first, then name, then major
+        • Watch out: swap the order and the data lands in the wrong columns (or errors out)
+
+3)    Writing values by data type
+        How I type each value depends on its column type
+        • INT => just type the number plain: 1
+        • VARCHAR => wrap the text in quotes: 'Jack'
+        • Example: INSERT INTO student VALUES(2, 'Kate', 'Sociology');
+
+4)    SELECT * FROM
+        A quick way to pull every row and column out of a table so I can check what got inserted
+        • Syntax: SELECT * FROM table_name;
+        • Example: SELECT * FROM student;
+        • The * means "all columns"
+        • After two inserts it shows Jack and Kate side by side
+        • Full SELECT tutorial comes later — for now it's just my check tool
+
+5)    Inserting into specific columns only
+        When I don't have a value for every column, I name the columns I do have
+        • Syntax: INSERT INTO table_name(col1, col2) VALUES(val1, val2);
+        • Example: INSERT INTO student(student_id, name) VALUES(4, 'Claire');
+        • major is left out on purpose — I don't know Claire's major
+        • Naming the columns means I won't get an error for the missing one
+
+6)    NULL
+        What a column gets when I don't give it a value
+        • Claire's row shows student_id 4, name Claire, major NULL
+        • NULL = empty / no value stored, not zero and not an empty string
+        • Very common and completely normal
+
+7)    Two ways to insert — summary
+        Pick based on whether I have all the data or only some of it
+        • Phase 1 => Have every value? Use the plain form
+        • INSERT INTO student VALUES(1, 'Jack', 'Biology');
+        • Phase 2 => Missing some values? Name the columns first
+        • INSERT INTO student(student_id, name) VALUES(4, 'Claire');
+        • Missing columns automatically fill with NULL
+
+8)    Can't insert duplicate primary keys
+        The primary key must be unique, so the database blocks a repeat
+        • Trying to insert student_id 3 twice throws: Duplicate Entry '3' for key 'PRIMARY'
+        • Change it to 4 and the insert works fine
+        • Two rows can both be named Claire — as long as their student_id differs
+        • Watch out: the error is about the key, not the name or any other column
+
+9)    Wrap Up
+        • INSERT INTO adds a row to an existing table
+        • Values go in the column order the table was defined in
+        • Numbers plain, strings in quotes
+        • SELECT * FROM table_name; shows me what's actually stored
+        • Name the columns when I only have partial data — the rest become NULL
+        • Primary keys must stay unique or the insert is rejected

@@ -32,3 +32,8 @@
     ALTER TABLE student ADD gpa DECIMAL(3,2);
 
     ALTER TABLE student DROP COLUMN gpa;
+
+8)  INSERT Data into table
+    • SELECT * FROM student;
+    • INSERT INTO student VALUES (1, 'Aman', 'ECE');
+    • INSERT INTO student(student_id,name) VALUES (4,'Claire');

@@ -1,0 +1,122 @@
+1)    Data Types
+        What kind of data I'm allowed to store in each column — I have to declare this when making the table
+        • These six are the core SQL data types, not the full list
+        • Every RDBMS adds its own extra types
+        • All six work in MySQL and in most other systems
+        • Watch out: check your specific RDBMS docs for types beyond these
+
+2)    INT
+        Any whole number — no decimal places allowed
+        • Syntax: col_name INT
+        • Example: student_id INT
+        • Used for IDs, counts, ages
+
+3)    DECIMAL(M,N)
+        Decimal numbers stored as an exact value
+        • M => total number of digits to store
+        • N => how many of those digits come after the decimal point
+        • Syntax: col_name DECIMAL(M,N)
+        • Example: gpa DECIMAL(3,2) → 3 total digits, 2 after the point (like 3.85)
+        • Example: DECIMAL(10,4) → 10 total digits, 4 after the point
+        • I pick M and N based on how accurate the number needs to be
+
+4)    VARCHAR(l)
+        Variable Character — a string of text with a maximum length of l characters
+        • Syntax: col_name VARCHAR(l)
+        • Example: name VARCHAR(20)
+        • VARCHAR(100) can hold at most 100 characters
+        • Pick the length realistically — 20 for a name is plenty
+        • Watch out: allocating 1000 characters when I only need 20 wastes huge space across millions of rows
+
+5)    BLOB
+        Binary Large Object — stores large amounts of binary data
+        • Used for images, files, media
+        • Stored directly in the database
+
+6)    DATE
+        A specific calendar date
+        • Format: 'YYYY-MM-DD'
+        • 4-digit year, 2-digit month, 2-digit day
+
+7)    TIMESTAMP
+        Like DATE but with time attached — used for recording when things happen
+        • Format: 'YYYY-MM-DD HH:MM:SS'
+        • Example use: recording when a row got inserted into the database
+
+8)    CREATE TABLE
+        The command that actually builds a physical table in my database
+        • CREATE and TABLE are SQL reserve words
+        • Table name goes in lowercase (it's not a reserve word)
+        • Columns go inside parentheses, each as: column_name datatype
+        • Separate each column with a comma
+        • Every SQL command ends with a semicolon
+        • Watch out: forget the semicolon and it's not valid SQL
+
+        Phase 1 => Write the command and table name
+        • CREATE TABLE student (
+
+        Phase 2 => Define each column with its data type
+        • student_id INT,
+        • name VARCHAR(20), major VARCHAR(20),
+
+        Phase 3 => Mark the primary key
+        • PRIMARY KEY (student_id)
+
+        Phase 4 => Close and end
+        • );
+        • Then run it — success shows "Rows affected: 0"
+
+9)    Two ways to declare the PRIMARY KEY
+        Both do exactly the same thing, just different placement
+        • Inline: student_id INT PRIMARY KEY,
+        • Separate line: PRIMARY KEY (student_id)
+        • Primary Key = the column that uniquely identifies each row
+
+10)    Capitalising SQL keywords
+        Convention, not a rule
+        • CREATE TABLE and create table both work the same
+        • Caps make it easy to spot the SQL apart from my table and column names
+        • Just stick with uppercase keywords and you're fine
+
+11)    DESCRIBE
+        Checks that a table got created correctly and shows its structure
+        • Syntax: DESCRIBE table_name;
+        • Example: DESCRIBE student;
+        • Lists all fields — student_id, name, major
+        • Shows the data type of each — like varchar(20)
+
+12)    DROP TABLE
+        Deletes the entire table from the database
+        • Syntax: DROP TABLE table_name;
+        • Example: DROP TABLE student;
+        • After this, DESCRIBE student gives "NO_SUCH_TABLE" — giraffe.student doesn't exist
+        • Watch out: this removes the whole table, not just the data
+
+13)    ALTER TABLE ... ADD
+        Adds a new column to a table that already exists
+        • Syntax: ALTER TABLE table_name ADD col_name datatype;
+        • Example: ALTER TABLE student ADD gpa DECIMAL(3,2);
+        • GPA is like 3.85 or 4.00 → 3 total digits, 2 after the point
+        • Run DESCRIBE after to confirm the new column showed up
+
+14)    ALTER TABLE ... DROP COLUMN
+        Removes a single column from a table, leaving the rest intact
+        • Syntax: ALTER TABLE table_name DROP COLUMN col_name;
+        • Example: ALTER TABLE student DROP COLUMN gpa;
+        • DESCRIBE after and the gpa field is gone
+
+15)    Order of work when building a database
+        Structure first, data second
+        • Phase 1 => Create the database
+        • Phase 2 => Define the schema — create all the tables and their columns
+        • Phase 3 => Insert data into those tables
+        • Watch out: I can't insert or query anything until the physical table exists
+
+16)    Wrap Up
+        • Six core data types: INT, DECIMAL, VARCHAR, BLOB, DATE, TIMESTAMP
+        • CREATE TABLE builds the table and defines every column's type
+        • PRIMARY KEY can be declared inline or on its own line
+        • DESCRIBE shows me the table structure
+        • DROP TABLE removes the whole table
+        • ALTER TABLE ADD / DROP COLUMN modifies an existing table
+        • Always define the schema before inserting any data

@@ -1,0 +1,78 @@
+1)    Constraints
+        Rules I put on a column when creating the table, to control what data is allowed in
+        • Set inside the CREATE TABLE statement, right after the column's data type
+        • Main ones: NOT NULL, UNIQUE, DEFAULT, AUTO_INCREMENT
+        • Constraint = a rule the database enforces for me, so bad data never gets in
+
+2)    NOT NULL
+        Says this column can never be left empty
+        • Syntax: col_name datatype NOT NULL
+        • Example: name VARCHAR(20) NOT NULL,
+        • NULL = a value that represents no value at all
+        • Trying to insert NULL for name throws an SQL error
+        • Watch out: the insert is rejected outright — nothing gets stored
+
+3)    UNIQUE
+        Says no two rows can share the same value in this column
+        • Syntax: col_name datatype UNIQUE
+        • Example: major VARCHAR(20) UNIQUE,
+        • Insert a second Biology major and it fails: Duplicate entry 'Biology' for key 'major'
+        • Watch out: UNIQUE on major is only a demo — in real life many students share a major
+
+4)    Primary Key = NOT NULL + UNIQUE
+        A primary key is really just those two constraints combined
+        • It can't be empty, and it can't repeat
+        • That's exactly what makes it identify a row uniquely
+        • Primary Key = a column that is both NOT NULL and UNIQUE
+
+5)    DEFAULT
+        Fills in a preset value when I don't provide one for that column
+        • Syntax: col_name datatype DEFAULT 'value'
+        • Example: major VARCHAR(20) DEFAULT 'undecided',
+        • Default value goes inside single quotes
+        • Insert a student with only student_id and name → major shows as 'undecided'
+        • Beats NULL when a sensible fallback exists
+
+6)    AUTO_INCREMENT
+        Lets the database generate the number for me, going up by 1 each insert
+        • Syntax: col_name INT AUTO_INCREMENT
+        • Example: student_id INT AUTO_INCREMENT,
+        • Mostly used on primary keys so I stop typing 1, 2, 3, 4 by hand
+        • I leave the column out of my INSERT entirely
+        • Example: INSERT INTO student(name, major) VALUES('Jack', 'Biology');
+        • Jack gets ID 1, Kate gets ID 2 — assigned automatically
+
+7)    Creating a table with constraints
+        Everything stacked together in one statement
+
+        Phase 1 => Drop the old table if I'm starting over
+        • DROP TABLE student;
+
+        Phase 2 => Write CREATE TABLE and list columns with their constraints
+        • CREATE TABLE student (
+        • student_id INT AUTO_INCREMENT,
+        • name VARCHAR(20) NOT NULL,
+        • major VARCHAR(20) DEFAULT 'undecided',
+
+        Phase 3 => Declare the primary key and close
+        • PRIMARY KEY(student_id)
+        • );
+
+        Phase 4 => Insert data and check
+        • INSERT INTO student(name, major) VALUES('Kate', 'Sociology');
+        • SELECT * FROM student;
+
+8)    Why constraints are worth it
+        They move the checking from my code into the database itself
+        • Control what type of information can go into each column
+        • Stop empty or duplicate values before they're stored
+        • Fill gaps automatically with defaults and auto-increment
+        • Less manual work when inserting rows
+
+9)    Wrap Up
+        • Constraints are rules set on columns at CREATE TABLE time
+        • NOT NULL blocks empty values
+        • UNIQUE blocks repeated values
+        • A primary key is just NOT NULL + UNIQUE together
+        • DEFAULT supplies a fallback value when none is given
+        • AUTO_INCREMENT generates the number itself, so I can skip that column in INSERT

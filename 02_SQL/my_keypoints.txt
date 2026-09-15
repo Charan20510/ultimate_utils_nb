@@ -37,3 +37,9 @@
     • SELECT * FROM student;
     • INSERT INTO student VALUES (1, 'Aman', 'ECE');
     • INSERT INTO student(student_id,name) VALUES (4,'Claire');
+
+9)  Constraints
+    • NOT NULL 
+    • UNIQUE
+    • DEFAULT
+    • AUTO_INCREMENT

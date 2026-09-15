@@ -44,3 +44,39 @@ Password is the root password you set during the .dmg install. If you skipped it
 /usr/local/mysql/bin/mysqladmin -u root password.
 
 ==========================================================================
+
+
+===================== connect to popsql =====================
+
+Fill in:
+
+- Connection name: mysql (fine as is)
+- Hostname: localhost · Port: 3306
+- Database: animal
+- Username: root
+- Password: the one you typed at Enter password: in Terminal
+- Connection Type: toggle ON → "Connect directly from my computer"
+
+That toggle kills the red localhost is not supported for cloud connections error.
+
+Catch: it must be the PopSQL desktop app, not the browser. If this screen is in a browser tab, download the Mac app
+and redo it there.
+
+Leave bridge / SSH / SSL off. Then hit Test → Connect.
+
+==========================================================
+
+===================== MySQL Workbench =====================
+
+Fill in:
+
+  1. Connection Name: mysql-connect
+  2. Hostname: localhost
+  3. Port: 3306
+  4. Username: root
+  5. Password: [PASSWORD] (your root password)
+  6. Default Schema: animal
+
+Then click “Test Connection” and then “Connect.”
+
+==========================================================

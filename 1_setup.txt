@@ -1,0 +1,14 @@
+Node.js LTS is installed using one method: fnm (a Node version manager), installed through Homebrew. In a fresh
+terminal, node -v shows v24.21.0 and npm -v shows 11.19.0.
+
+What I did:
+- Installed fnm with brew install fnm.
+- Added one line to ~/.zshrc so every new terminal loads fnm:
+eval "$(fnm env --use-on-cd --shell zsh)"
+- Installed the latest LTS and made it the default with fnm install --lts && fnm default lts-latest.
+
+To keep it clean from now on:
+- Upgrade later with fnm install --lts && fnm default lts-latest.
+- Install only through fnm. Don't use a .pkg from nodejs.org or brew install node, since a second install is what
+caused the v22/v24 mix-up.
+- Open a new terminal before using it. Terminals that were already open won't see Node yet.

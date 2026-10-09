@@ -1,0 +1,36 @@
+  uv commands to replace pip in this project
+
+  Run these from the project folder with the venv activated (source venv/bin/activate). uv then uses your venv
+  automatically.
+
+  ┌─────────────────────┬─────────────────────────────────┬────────────────────────────────────┐
+  │        Task         │             pip way             │               uv way               │
+  ├─────────────────────┼─────────────────────────────────┼────────────────────────────────────┤
+  │ Install a package   │ pip install numpy               │ uv pip install numpy               │
+  ├─────────────────────┼─────────────────────────────────┼────────────────────────────────────┤
+  │ Install from file   │ pip install -r requirements.txt │ uv pip install -r requirements.txt │
+  ├─────────────────────┼─────────────────────────────────┼────────────────────────────────────┤
+  │ Uninstall           │ pip uninstall numpy             │ uv pip uninstall numpy             │
+  ├─────────────────────┼─────────────────────────────────┼────────────────────────────────────┤
+  │ List packages       │ pip list                        │ uv pip list                        │
+  ├─────────────────────┼─────────────────────────────────┼────────────────────────────────────┤
+  │ Show one package    │ pip show torch                  │ uv pip show torch                  │
+  ├─────────────────────┼─────────────────────────────────┼────────────────────────────────────┤
+  │ Freeze versions     │ pip freeze > req.txt            │ uv pip freeze > req.txt            │
+  ├─────────────────────┼─────────────────────────────────┼────────────────────────────────────┤
+  │ Upgrade a package   │ pip install -U torch            │ uv pip install -U torch            │
+  ├─────────────────────┼─────────────────────────────────┼────────────────────────────────────┤
+  │ Check for conflicts │ pip check                       │ uv pip check                       │
+  └─────────────────────┴─────────────────────────────────┴────────────────────────────────────┘
+
+  Setup commands (rarely needed):
+  - uv venv --python 3.11 venv creates a new venv.
+  - uv python install 3.11 downloads Python 3.11.
+  - uv python list shows the Python versions you have.
+  
+  Tips:
+  - Just put uv in front of your usual pip command.
+  - uv is much faster than pip and gives the same result.
+  - If you add a new library, also add it to requirements.txt.
+  
+  I haven't changed anything.

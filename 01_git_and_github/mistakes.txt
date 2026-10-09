@@ -6,3 +6,42 @@
         git branch -D Git_and_GitHub     # force
 
         Can't delete the branch you're on — switch first (git switch main)
+
+3)      ====    Empty main & Diff Phases    ====
+
+        Here are the commands. Run them in the project folder. Your branch is currently called master and has no commits yet.
+
+        1. Make an empty main (once)
+        git branch -m master main
+        git commit --allow-empty -m "Initial empty commit"
+        - This renames master to main.
+        - An empty commit gives main a starting point that contains no files.
+
+        2. Phase 0 branch S0
+        git switch -c S0
+        git add .
+        git status          # check the list first: venv/ and data/ must NOT appear
+        git commit -m "Phase 0: setup"
+
+        3. Each new phase (S1, S2, …)
+        git switch -c S1    # create it while you are on S0, so it starts with Phase 0 files
+        # ... do the Phase 1 work ...
+        git add .
+        git commit -m "Phase 1: data"
+        - Do the same for S2 from S1, S3 from S2, and so on.
+        - Each branch then holds all files up to that phase.
+
+        Useful checks
+        - git branch lists your branches; * marks the current one.
+        - git switch main takes you back to the empty main.
+        - git diff S0 S1 --stat shows what changed in a phase.
+
+        Optional: push to GitHub
+        git remote add origin <your-repo-url>
+        git push -u origin main S0
+        git push -u origin S1     # after each phase
+
+        Notes
+        - Commit messages will have no Claude co-author line (now a rule in CLAUDE.md).
+        - files/ (handoff notes and the drawings PDF) will be included by git add .. If you don't want it in the repo, add
+        files/ to .gitignore first.

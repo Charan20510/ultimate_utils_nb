@@ -1,0 +1,109 @@
+git vs gh
+- git is version control on your machine. It tracks file changes, commits, branches, and history, and works offline.
+- gh is GitHub's command-line tool. It talks to GitHub.com for repos, PRs, issues, Actions, and login.
+- In short, git manages your code and gh manages GitHub. You use them together.
+
+git: daily commands
+- git init: start tracking a folder
+- git clone <url>: download a repo
+- git status: see what changed
+- git add .: stage all changes
+- git commit -m "msg": save a snapshot
+- git push: upload commits
+- git pull: get the latest from the remote
+- git log --oneline: view history
+- git diff: see exact line changes
+
+git: branches
+- git branch: list branches
+- git switch -c <name>: create a branch and move to it
+- git switch <name>: change branch
+- git merge <name>: merge a branch into the current one
+- git branch -d <name>: delete a branch 
+
+git: undo
+- git restore <file>: discard uncommitted changes to a file
+- git restore --staged <file>: unstage a file
+- git reset --soft HEAD~1: undo the last commit but keep the changes
+- git stash / git stash pop: set work aside, then bring it back
+
+git: config
+- git config --global user.name "X": set your name
+- git config --global user.email "x@y.com": set your email
+- git config --list: view all settings
+- git remote -v: show the remote URLs
+
+gh: login and accounts
+- gh auth login: log in
+- gh auth status: see which accounts are logged in
+- gh auth switch: change the active account
+- gh auth logout -u <user>: remove an account
+
+gh: repos
+- gh repo create <name> --public --source=. --push: create a GitHub repo from the current folder and push it
+- gh repo clone <user/repo>: clone a repo
+- gh repo view --web: open the repo in your browser
+
+gh: pull requests
+- gh pr create: open a PR
+- gh pr list: list PRs 
+- gh pr checkout <num>: check out a PR locally
+- gh pr merge <num>: merge a PR
+- gh pr status: see your PRs 
+
+gh: issues and Actions
+- gh issue create / gh issue list: create or list issues
+- gh run list / gh run watch: see CI runs 
+
+Typical flow
+1. git switch -c feature
+2. Edit your files
+3. git add ., then git commit -m "..."
+4. git push -u origin feature
+5. gh pr create, then gh pr merge
+6. git switch main, then git pull
+
+Tip: gh auth login also sets up git's login for GitHub over HTTPS, so git push works without a password.
+
+
+A letter flag can mean different things in different commands, so the same -u or -d changes meaning depending on where
+it's used.
+
+Flags in git commands
+- -m: message. The commit note, as in git commit -m "fix bug".
+- -u: upstream. Links your local branch to the remote one, so later you can just type git push or git pull. Example:
+git push -u origin feature.
+- -v: verbose. Shows more detail. git remote -v lists the remote URLs.
+- -c: create. git switch -c feature makes a new branch and moves to it.
+- -d: delete. git branch -d feature removes a branch that's already merged.
+- -D: force delete. Removes a branch even if it isn't merged.
+- --global: applies the setting to every repo on your machine.
+- --local: applies the setting to the current repo only.
+- --list: shows all settings.
+- --show-origin: shows which file each setting comes from.
+- --get-regexp: searches settings by pattern.
+- --oneline: shows each commit on one short line.
+- --staged: works on staged files, as in git restore --staged.
+- --soft: undoes a commit but keeps your changes.
+- HEAD~1: the commit just before the current one.
+- -sne (in git shortlog -sne) is three flags combined:
+- -s: summary. Shows commit counts only.
+- -n: numbered. Sorts by count.
+- -e: email. Shows email addresses.
+
+Words used in commands
+- origin: the default name for your remote repo on GitHub.
+- main: the default branch.
+- .: the current folder, so git add . means everything here.
+
+Flags in gh commands
+- -h: hostname, as in -h github.com. It is not help here.
+- -u: user. Picks which account, as in gh auth logout -u Git-Boldsage.
+- --public: makes the new repo public. --private makes it private.
+- --source=.: creates the repo from the current folder.
+- --push: pushes your code right after the repo is created.
+- --web: opens the page in your browser.
+
+Getting help
+- git <cmd> --help or gh <cmd> --help shows every flag for that command.
+- With git, -h gives short help. With gh, -h is short help except where it means hostname, like in gh auth.

@@ -1,0 +1,8 @@
+Plugins & Skills
+- https://github.com/affaan-m/ecc
+- https://github.com/juliusbrussee/caveman
+- https://github.com/dietrichgebert/ponytail
+- https://github.com/headroomlabs-ai/headroom
+
+Essentials tools
+- tmux
